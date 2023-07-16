@@ -1,0 +1,8 @@
+prefix=/home/hemanth/neural_fly/devel/.private/mav_linear_mpc
+
+Name: mav_linear_mpc
+Description: Description of mav_linear_mpc
+Version: 1.0.0
+Cflags: -I/home/hemanth/neural_fly/devel/.private/mav_linear_mpc/include -I/home/hemanth/neural_fly/src/mav_control_rw/mav_linear_mpc/include
+Libs: -L${prefix}/lib -lmav_linear_mpc -lcvxgen_solver
+Requires: mav_msgs roscpp cmake_modules tf mav_control_interface mav_disturbance_observer message_runtime

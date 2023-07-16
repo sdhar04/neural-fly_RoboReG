@@ -1,0 +1,169 @@
+/home/hemanth/neural_fly/src/mavros/mavros/src/plugins/dummy.cpp:66:85: error: ‘mavlink::common::msg::HEARTBEAT’ has not been declared
+  void handle_heartbeat(const mavlink::mavlink_message_t *msg, mavlink::common::msg::HEARTBEAT &hb) {
+                                                                                     ^~~~~~~~~
+In file included from /opt/ros/melodic/include/ros/assert.h:35:0,
+                 from /opt/ros/melodic/include/ros/common.h:36,
+                 from /opt/ros/melodic/include/ros/publisher.h:32,
+                 from /opt/ros/melodic/include/ros/node_handle.h:32,
+                 from /opt/ros/melodic/include/diagnostic_updater/diagnostic_updater.h:42,
+                 from /home/hemanth/neural_fly/src/mavros/mavros/include/mavros/mavros_plugin.h:23,
+                 from /home/hemanth/neural_fly/src/mavros/mavros/src/plugins/dummy.cpp:18:
+/home/hemanth/neural_fly/src/mavros/mavros/src/plugins/dummy.cpp: In member function ‘void mavros::std_plugins::DummyPlugin::handle_heartbeat(const mavlink_message_t*, int&)’:
+/home/hemanth/neural_fly/src/mavros/mavros/src/plugins/dummy.cpp:67:68: error: request for member ‘to_yaml’ in ‘hb’, which is of non-class type ‘int’
+   ROS_INFO_STREAM_NAMED("dummy", "Dummy::handle_heartbeat: " << hb.to_yaml());
+                                                                    ^
+/opt/ros/melodic/include/ros/console.h:358:64: note: in definition of macro ‘ROSCONSOLE_PRINT_STREAM_AT_LOCATION_WITH_FILTER’
+     __rosconsole_print_stream_at_location_with_filter__ss__ << args; \
+                                                                ^~~~
+/opt/ros/melodic/include/ros/console.h:406:7: note: in expansion of macro ‘ROSCONSOLE_PRINT_STREAM_AT_LOCATION’
+       ROSCONSOLE_PRINT_STREAM_AT_LOCATION(args); \
+       ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/opt/ros/melodic/include/ros/console.h:579:43: note: in expansion of macro ‘ROS_LOG_STREAM_COND’
+ #define ROS_LOG_STREAM(level, name, args) ROS_LOG_STREAM_COND(true, level, name, args)
+                                           ^~~~~~~~~~~~~~~~~~~
+/opt/ros/melodic/include/rosconsole/macros_generated.h:113:43: note: in expansion of macro ‘ROS_LOG_STREAM’
+ #define ROS_INFO_STREAM_NAMED(name, args) ROS_LOG_STREAM(::ros::console::levels::Info, std::string(ROSCONSOLE_NAME_PREFIX) + "." + name, args)
+                                           ^~~~~~~~~~~~~~
+/home/hemanth/neural_fly/src/mavros/mavros/src/plugins/dummy.cpp:67:3: note: in expansion of macro ‘ROS_INFO_STREAM_NAMED’
+   ROS_INFO_STREAM_NAMED("dummy", "Dummy::handle_heartbeat: " << hb.to_yaml());
+   ^
+In file included from /home/hemanth/neural_fly/src/mavros/mavros/src/plugins/dummy.cpp:18:0:
+/home/hemanth/neural_fly/src/mavros/mavros/include/mavros/mavros_plugin.h: In instantiation of ‘mavros::plugin::PluginBase::HandlerInfo mavros::plugin::PluginBase::make_handler(void (_C::*)(const mavlink_message_t*, _T&)) [with _C = mavros::std_plugins::DummyPlugin; _T = int; mavros::plugin::PluginBase::HandlerInfo = std::tuple<unsigned int, const char*, long unsigned int, std::function<void(const mavlink::__mavlink_message*, mavconn::Framing)> >; mavlink::mavlink_message_t = mavlink::__mavlink_message]’:
+/home/hemanth/neural_fly/src/mavros/mavros/src/plugins/dummy.cpp:55:47:   required from here
+/home/hemanth/neural_fly/src/mavros/mavros/include/mavros/mavros_plugin.h:103:14: error: ‘MSG_ID’ is not a member of ‘int’
+   const auto id = _T::MSG_ID;
+              ^~
+/home/hemanth/neural_fly/src/mavros/mavros/include/mavros/mavros_plugin.h:104:14: error: ‘NAME’ is not a member of ‘int’
+   const auto name = _T::NAME;
+              ^~~~
+/home/hemanth/neural_fly/src/mavros/mavros/include/mavros/mavros_plugin.h:119:3: error: no matching function for call to ‘std::tuple<unsigned int, const char*, long unsigned int, std::function<void(const mavlink::__mavlink_message*, mavconn::Framing)> >::tuple(<brace-enclosed initializer list>)’
+   };
+   ^
+In file included from /home/hemanth/neural_fly/src/mavros/mavros/include/mavros/mavros_plugin.h:20:0,
+                 from /home/hemanth/neural_fly/src/mavros/mavros/src/plugins/dummy.cpp:18:
+/usr/include/c++/7/tuple:828:11: note: candidate: template<class _Alloc, class _Dummy, class ... _UElements, typename std::enable_if<((std::_TC<((4 == sizeof... (_UElements)) && (! std::is_same<std::tuple<unsigned int, const char*, long unsigned int, std::function<void(const mavlink::__mavlink_message*, mavconn::Framing)> >, std::tuple<_Tail ...> >::value)), unsigned int, const char*, long unsigned int, std::function<void(const mavlink::__mavlink_message*, mavconn::Framing)> >::_MoveConstructibleTuple<_UElements ...>() && (! std::_TC<((4 == sizeof... (_UElements)) && (! std::is_same<std::tuple<unsigned int, const char*, long unsigned int, std::function<void(const mavlink::__mavlink_message*, mavconn::Framing)> >, std::tuple<_Tail ...> >::value)), unsigned int, const char*, long unsigned int, std::function<void(const mavlink::__mavlink_message*, mavconn::Framing)> >::_ImplicitlyMoveConvertibleTuple<_UElements ...>())) && std::_TC<(std::is_same<_Dummy, void>::value && (4 == 1)), unsigned int, const char*, long unsigned int, std::function<void(const mavlink::__mavlink_message*, mavconn::Framing)> >::_NonNestedTuple<tuple<_Tail ...>&&>()), bool>::type <anonymous> > std::tuple<_Elements>::tuple(std::allocator_arg_t, const _Alloc&, std::tuple<_Args2 ...>&&)
+  explicit tuple(allocator_arg_t __tag, const _Alloc& __a,
+           ^~~~~
+/usr/include/c++/7/tuple:828:11: note:   template argument deduction/substitution failed:
+/usr/include/c++/7/tuple:813:2: note: candidate: template<class _Alloc, class _Dummy, class ... _UElements, typename std::enable_if<((std::_TC<((4 == sizeof... (_UElements)) && (! std::is_same<std::tuple<unsigned int, const char*, long unsigned int, std::function<void(const mavlink::__mavlink_message*, mavconn::Framing)> >, std::tuple<_Tail ...> >::value)), unsigned int, const char*, long unsigned int, std::function<void(const mavlink::__mavlink_message*, mavconn::Framing)> >::_MoveConstructibleTuple<_UElements ...>() && std::_TC<((4 == sizeof... (_UElements)) && (! std::is_same<std::tuple<unsigned int, const char*, long unsigned int, std::function<void(const mavlink::__mavlink_message*, mavconn::Framing)> >, std::tuple<_Tail ...> >::value)), unsigned int, const char*, long unsigned int, std::function<void(const mavlink::__mavlink_message*, mavconn::Framing)> >::_ImplicitlyMoveConvertibleTuple<_UElements ...>()) && std::_TC<(std::is_same<_Dummy, void>::value && (4 == 1)), unsigned int, const char*, long unsigned int, std::function<void(const mavlink::__mavlink_message*, mavconn::Framing)> >::_NonNestedTuple<tuple<_Tail ...>&&>()), bool>::type <anonymous> > std::tuple<_Elements>::tuple(std::allocator_arg_t, const _Alloc&, std::tuple<_Args2 ...>&&)
+  tuple(allocator_arg_t __tag, const _Alloc& __a,
+  ^~~~~
+/usr/include/c++/7/tuple:813:2: note:   template argument deduction/substitution failed:
+/usr/include/c++/7/tuple:798:11: note: candidate: template<class _Alloc, class _Dummy, class ... _UElements, typename std::enable_if<((std::_TC<((4 == sizeof... (_UElements)) && (! std::is_same<std::tuple<unsigned int, const char*, long unsigned int, std::function<void(const mavlink::__mavlink_message*, mavconn::Framing)> >, std::tuple<_Tail ...> >::value)), unsigned int, const char*, long unsigned int, std::function<void(const mavlink::__mavlink_message*, mavconn::Framing)> >::_ConstructibleTuple<_UElements ...>() && (! std::_TC<((4 == sizeof... (_UElements)) && (! std::is_same<std::tuple<unsigned int, const char*, long unsigned int, std::function<void(const mavlink::__mavlink_message*, mavconn::Framing)> >, std::tuple<_Tail ...> >::value)), unsigned int, const char*, long unsigned int, std::function<void(const mavlink::__mavlink_message*, mavconn::Framing)> >::_ImplicitlyConvertibleTuple<_UElements ...>())) && std::_TC<(std::is_same<_Dummy, void>::value && (4 == 1)), unsigned int, const char*, long unsigned int, std::function<void(const mavlink::__mavlink_message*, mavconn::Framing)> >::_NonNestedTuple<tuple<_Tail ...>&&>()), bool>::type <anonymous> > std::tuple<_Elements>::tuple(std::allocator_arg_t, const _Alloc&, const std::tuple<_Args2 ...>&)
+  explicit tuple(allocator_arg_t __tag, const _Alloc& __a,
+           ^~~~~
+/usr/include/c++/7/tuple:798:11: note:   template argument deduction/substitution failed:
+/usr/include/c++/7/tuple:783:2: note: candidate: template<class _Alloc, class _Dummy, class ... _UElements, typename std::enable_if<((std::_TC<((4 == sizeof... (_UElements)) && (! std::is_same<std::tuple<unsigned int, const char*, long unsigned int, std::function<void(const mavlink::__mavlink_message*, mavconn::Framing)> >, std::tuple<_Tail ...> >::value)), unsigned int, const char*, long unsigned int, std::function<void(const mavlink::__mavlink_message*, mavconn::Framing)> >::_ConstructibleTuple<_UElements ...>() && std::_TC<((4 == sizeof... (_UElements)) && (! std::is_same<std::tuple<unsigned int, const char*, long unsigned int, std::function<void(const mavlink::__mavlink_message*, mavconn::Framing)> >, std::tuple<_Tail ...> >::value)), unsigned int, const char*, long unsigned int, std::function<void(const mavlink::__mavlink_message*, mavconn::Framing)> >::_ImplicitlyConvertibleTuple<_UElements ...>()) && std::_TC<(std::is_same<_Dummy, void>::value && (4 == 1)), unsigned int, const char*, long unsigned int, std::function<void(const mavlink::__mavlink_message*, mavconn::Framing)> >::_NonNestedTuple<tuple<_Tail ...>&&>()), bool>::type <anonymous> > std::tuple<_Elements>::tuple(std::allocator_arg_t, const _Alloc&, const std::tuple<_Args2 ...>&)
+  tuple(allocator_arg_t __tag, const _Alloc& __a,
+  ^~~~~
+/usr/include/c++/7/tuple:783:2: note:   template argument deduction/substitution failed:
+/usr/include/c++/7/tuple:771:2: note: candidate: template<class _Alloc> std::tuple<_Elements>::tuple(std::allocator_arg_t, const _Alloc&, std::tuple<_Elements>&&)
+  tuple(allocator_arg_t __tag, const _Alloc& __a, tuple&& __in)
+  ^~~~~
+/usr/include/c++/7/tuple:771:2: note:   template argument deduction/substitution failed:
+/usr/include/c++/7/tuple:767:2: note: candidate: template<class _Alloc> std::tuple<_Elements>::tuple(std::allocator_arg_t, const _Alloc&, const std::tuple<_Elements>&)
+  tuple(allocator_arg_t __tag, const _Alloc& __a, const tuple& __in)
+  ^~~~~
+/usr/include/c++/7/tuple:767:2: note:   template argument deduction/substitution failed:
+/usr/include/c++/7/tuple:761:11: note: candidate: template<class _Alloc, class ... _UElements, typename std::enable_if<(std::_TC<((4 == sizeof... (_UElements)) && std::_TC<(sizeof... (_UElements) == 1), unsigned int, const char*, long unsigned int, std::function<void(const mavlink::__mavlink_message*, mavconn::Framing)> >::_NotSameTuple<_UElements ...>()), unsigned int, const char*, long unsigned int, std::function<void(const mavlink::__mavlink_message*, mavconn::Framing)> >::_MoveConstructibleTuple<_UElements ...>() && (! std::_TC<((4 == sizeof... (_UElements)) && std::_TC<(sizeof... (_UElements) == 1), unsigned int, const char*, long unsigned int, std::function<void(const mavlink::__mavlink_message*, mavconn::Framing)> >::_NotSameTuple<_UElements ...>()), unsigned int, const char*, long unsigned int, std::function<void(const mavlink::__mavlink_message*, mavconn::Framing)> >::_ImplicitlyMoveConvertibleTuple<_UElements ...>())), bool>::type <anonymous> > std::tuple<_Elements>::tuple(std::allocator_arg_t, const _Alloc&, _UElements&& ...)
+  explicit tuple(allocator_arg_t __tag, const _Alloc& __a,
+           ^~~~~
+/usr/include/c++/7/tuple:761:11: note:   template argument deduction/substitution failed:
+/usr/include/c++/7/tuple:750:2: note: candidate: template<class _Alloc, class ... _UElements, typename std::enable_if<(std::_TC<((4 == sizeof... (_UElements)) && std::_TC<(sizeof... (_UElements) == 1), unsigned int, const char*, long unsigned int, std::function<void(const mavlink::__mavlink_message*, mavconn::Framing)> >::_NotSameTuple<_UElements ...>()), unsigned int, const char*, long unsigned int, std::function<void(const mavlink::__mavlink_message*, mavconn::Framing)> >::_MoveConstructibleTuple<_UElements ...>() && std::_TC<((4 == sizeof... (_UElements)) && std::_TC<(sizeof... (_UElements) == 1), unsigned int, const char*, long unsigned int, std::function<void(const mavlink::__mavlink_message*, mavconn::Framing)> >::_NotSameTuple<_UElements ...>()), unsigned int, const char*, long unsigned int, std::function<void(const mavlink::__mavlink_message*, mavconn::Framing)> >::_ImplicitlyMoveConvertibleTuple<_UElements ...>()), bool>::type <anonymous> > std::tuple<_Elements>::tuple(std::allocator_arg_t, const _Alloc&, _UElements&& ...)
+  tuple(allocator_arg_t __tag, const _Alloc& __a,
+  ^~~~~
+/usr/include/c++/7/tuple:750:2: note:   template argument deduction/substitution failed:
+/usr/include/c++/7/tuple:740:11: note: candidate: template<class _Alloc, class _Dummy, typename std::enable_if<(std::_TC<std::is_same<_Dummy, void>::value, unsigned int, const char*, long unsigned int, std::function<void(const mavlink::__mavlink_message*, mavconn::Framing)> >::_ConstructibleTuple<unsigned int, const char*, long unsigned int, function<void(const mavlink::__mavlink_message*, mavconn::Framing)> >() && (! std::_TC<std::is_same<_Dummy, void>::value, unsigned int, const char*, long unsigned int, std::function<void(const mavlink::__mavlink_message*, mavconn::Framing)> >::_ImplicitlyConvertibleTuple<unsigned int, const char*, long unsigned int, function<void(const mavlink::__mavlink_message*, mavconn::Framing)> >())), bool>::type <anonymous> > std::tuple<_Elements>::tuple(std::allocator_arg_t, const _Alloc&, const _Elements& ...)
+  explicit tuple(allocator_arg_t __tag, const _Alloc& __a,
+           ^~~~~
+/usr/include/c++/7/tuple:740:11: note:   template argument deduction/substitution failed:
+/usr/include/c++/7/tuple:729:2: note: candidate: template<class _Alloc, class _Dummy, typename std::enable_if<(std::_TC<std::is_same<_Dummy, void>::value, unsigned int, const char*, long unsigned int, std::function<void(const mavlink::__mavlink_message*, mavconn::Framing)> >::_ConstructibleTuple<unsigned int, const char*, long unsigned int, function<void(const mavlink::__mavlink_message*, mavconn::Framing)> >() && std::_TC<std::is_same<_Dummy, void>::value, unsigned int, const char*, long unsigned int, std::function<void(const mavlink::__mavlink_message*, mavconn::Framing)> >::_ImplicitlyConvertibleTuple<unsigned int, const char*, long unsigned int, function<void(const mavlink::__mavlink_message*, mavconn::Framing)> >()), bool>::type <anonymous> > std::tuple<_Elements>::tuple(std::allocator_arg_t, const _Alloc&, const _Elements& ...)
+  tuple(allocator_arg_t __tag, const _Alloc& __a,
+  ^~~~~
+/usr/include/c++/7/tuple:729:2: note:   template argument deduction/substitution failed:
+/usr/include/c++/7/tuple:719:2: note: candidate: template<class _Alloc> std::tuple<_Elements>::tuple(std::allocator_arg_t, const _Alloc&)
+  tuple(allocator_arg_t __tag, const _Alloc& __a)
+  ^~~~~
+/usr/include/c++/7/tuple:719:2: note:   template argument deduction/substitution failed:
+/usr/include/c++/7/tuple:713:28: note: candidate: template<class ... _UElements, class _Dummy, typename std::enable_if<((std::_TC<((4 == sizeof... (_UElements)) && (! std::is_same<std::tuple<unsigned int, const char*, long unsigned int, std::function<void(const mavlink::__mavlink_message*, mavconn::Framing)> >, std::tuple<_Tps ...> >::value)), unsigned int, const char*, long unsigned int, std::function<void(const mavlink::__mavlink_message*, mavconn::Framing)> >::_MoveConstructibleTuple<_UElements ...>() && (! std::_TC<((4 == sizeof... (_UElements)) && (! std::is_same<std::tuple<unsigned int, const char*, long unsigned int, std::function<void(const mavlink::__mavlink_message*, mavconn::Framing)> >, std::tuple<_Tps ...> >::value)), unsigned int, const char*, long unsigned int, std::function<void(const mavlink::__mavlink_message*, mavconn::Framing)> >::_ImplicitlyMoveConvertibleTuple<_UElements ...>())) && std::_TC<(std::is_same<_Dummy, void>::value && (4 == 1)), unsigned int, const char*, long unsigned int, std::function<void(const mavlink::__mavlink_message*, mavconn::Framing)> >::_NonNestedTuple<tuple<_Tps ...>&&>()), bool>::type <anonymous> > constexpr std::tuple<_Elements>::tuple(std::tuple<_Args1 ...>&&)
+         explicit constexpr tuple(tuple<_UElements...>&& __in)
+                            ^~~~~
+/usr/include/c++/7/tuple:713:28: note:   template argument deduction/substitution failed:
+/usr/include/c++/7/tuple:702:19: note: candidate: template<class ... _UElements, class _Dummy, typename std::enable_if<((std::_TC<((4 == sizeof... (_UElements)) && (! std::is_same<std::tuple<unsigned int, const char*, long unsigned int, std::function<void(const mavlink::__mavlink_message*, mavconn::Framing)> >, std::tuple<_Tps ...> >::value)), unsigned int, const char*, long unsigned int, std::function<void(const mavlink::__mavlink_message*, mavconn::Framing)> >::_MoveConstructibleTuple<_UElements ...>() && std::_TC<((4 == sizeof... (_UElements)) && (! std::is_same<std::tuple<unsigned int, const char*, long unsigned int, std::function<void(const mavlink::__mavlink_message*, mavconn::Framing)> >, std::tuple<_Tps ...> >::value)), unsigned int, const char*, long unsigned int, std::function<void(const mavlink::__mavlink_message*, mavconn::Framing)> >::_ImplicitlyMoveConvertibleTuple<_UElements ...>()) && std::_TC<(std::is_same<_Dummy, void>::value && (4 == 1)), unsigned int, const char*, long unsigned int, std::function<void(const mavlink::__mavlink_message*, mavconn::Framing)> >::_NonNestedTuple<tuple<_Tps ...>&&>()), bool>::type <anonymous> > constexpr std::tuple<_Elements>::tuple(std::tuple<_Args1 ...>&&)
+         constexpr tuple(tuple<_UElements...>&& __in)
+                   ^~~~~
+/usr/include/c++/7/tuple:702:19: note:   template argument deduction/substitution failed:
+/usr/include/c++/7/tuple:690:28: note: candidate: template<class ... _UElements, class _Dummy, typename std::enable_if<((std::_TC<((4 == sizeof... (_UElements)) && (! std::is_same<std::tuple<unsigned int, const char*, long unsigned int, std::function<void(const mavlink::__mavlink_message*, mavconn::Framing)> >, std::tuple<_Tps ...> >::value)), unsigned int, const char*, long unsigned int, std::function<void(const mavlink::__mavlink_message*, mavconn::Framing)> >::_ConstructibleTuple<_UElements ...>() && (! std::_TC<((4 == sizeof... (_UElements)) && (! std::is_same<std::tuple<unsigned int, const char*, long unsigned int, std::function<void(const mavlink::__mavlink_message*, mavconn::Framing)> >, std::tuple<_Tps ...> >::value)), unsigned int, const char*, long unsigned int, std::function<void(const mavlink::__mavlink_message*, mavconn::Framing)> >::_ImplicitlyConvertibleTuple<_UElements ...>())) && std::_TC<(std::is_same<_Dummy, void>::value && (4 == 1)), unsigned int, const char*, long unsigned int, std::function<void(const mavlink::__mavlink_message*, mavconn::Framing)> >::_NonNestedTuple<const tuple<_Tps ...>&>()), bool>::type <anonymous> > constexpr std::tuple<_Elements>::tuple(const std::tuple<_Args1 ...>&)
+         explicit constexpr tuple(const tuple<_UElements...>& __in)
+                            ^~~~~
+/usr/include/c++/7/tuple:690:28: note:   template argument deduction/substitution failed:
+/usr/include/c++/7/tuple:678:19: note: candidate: template<class ... _UElements, class _Dummy, typename std::enable_if<((std::_TC<((4 == sizeof... (_UElements)) && (! std::is_same<std::tuple<unsigned int, const char*, long unsigned int, std::function<void(const mavlink::__mavlink_message*, mavconn::Framing)> >, std::tuple<_Tps ...> >::value)), unsigned int, const char*, long unsigned int, std::function<void(const mavlink::__mavlink_message*, mavconn::Framing)> >::_ConstructibleTuple<_UElements ...>() && std::_TC<((4 == sizeof... (_UElements)) && (! std::is_same<std::tuple<unsigned int, const char*, long unsigned int, std::function<void(const mavlink::__mavlink_message*, mavconn::Framing)> >, std::tuple<_Tps ...> >::value)), unsigned int, const char*, long unsigned int, std::function<void(const mavlink::__mavlink_message*, mavconn::Framing)> >::_ImplicitlyConvertibleTuple<_UElements ...>()) && std::_TC<(std::is_same<_Dummy, void>::value && (4 == 1)), unsigned int, const char*, long unsigned int, std::function<void(const mavlink::__mavlink_message*, mavconn::Framing)> >::_NonNestedTuple<const tuple<_Tps ...>&>()), bool>::type <anonymous> > constexpr std::tuple<_Elements>::tuple(const std::tuple<_Args1 ...>&)
+         constexpr tuple(const tuple<_UElements...>& __in)
+                   ^~~~~
+/usr/include/c++/7/tuple:678:19: note:   template argument deduction/substitution failed:
+/usr/include/c++/7/tuple:662:17: note: candidate: constexpr std::tuple<_Elements>::tuple(std::tuple<_Elements>&&) [with _Elements = {unsigned int, const char*, long unsigned int, std::function<void(const mavlink::__mavlink_message*, mavconn::Framing)>}]
+       constexpr tuple(tuple&&) = default;
+                 ^~~~~
+/usr/include/c++/7/tuple:662:17: note:   candidate expects 1 argument, 4 provided
+/usr/include/c++/7/tuple:660:17: note: candidate: std::tuple<_Elements>::tuple(const std::tuple<_Elements>&) [with _Elements = {unsigned int, const char*, long unsigned int, std::function<void(const mavlink::__mavlink_message*, mavconn::Framing)>}]
+       constexpr tuple(const tuple&) = default;
+                 ^~~~~
+/usr/include/c++/7/tuple:660:17: note:   candidate expects 1 argument, 4 provided
+/usr/include/c++/7/tuple:657:28: note: candidate: template<class ... _UElements, typename std::enable_if<((std::_TC<((4 == sizeof... (_UElements)) && std::_TC<(sizeof... (_UElements) == 1), unsigned int, const char*, long unsigned int, std::function<void(const mavlink::__mavlink_message*, mavconn::Framing)> >::_NotSameTuple<_UElements ...>()), unsigned int, const char*, long unsigned int, std::function<void(const mavlink::__mavlink_message*, mavconn::Framing)> >::_MoveConstructibleTuple<_UElements ...>() && (! std::_TC<((4 == sizeof... (_UElements)) && std::_TC<(sizeof... (_UElements) == 1), unsigned int, const char*, long unsigned int, std::function<void(const mavlink::__mavlink_message*, mavconn::Framing)> >::_NotSameTuple<_UElements ...>()), unsigned int, const char*, long unsigned int, std::function<void(const mavlink::__mavlink_message*, mavconn::Framing)> >::_ImplicitlyMoveConvertibleTuple<_UElements ...>())) && (4 >= 1)), bool>::type <anonymous> > constexpr std::tuple<_Elements>::tuple(_UElements&& ...)
+         explicit constexpr tuple(_UElements&&... __elements)
+                            ^~~~~
+/usr/include/c++/7/tuple:657:28: note:   template argument deduction/substitution failed:
+/usr/include/c++/7/tuple:646:19: note: candidate: template<class ... _UElements, typename std::enable_if<((std::_TC<((4 == sizeof... (_UElements)) && std::_TC<(sizeof... (_UElements) == 1), unsigned int, const char*, long unsigned int, std::function<void(const mavlink::__mavlink_message*, mavconn::Framing)> >::_NotSameTuple<_UElements ...>()), unsigned int, const char*, long unsigned int, std::function<void(const mavlink::__mavlink_message*, mavconn::Framing)> >::_MoveConstructibleTuple<_UElements ...>() && std::_TC<((4 == sizeof... (_UElements)) && std::_TC<(sizeof... (_UElements) == 1), unsigned int, const char*, long unsigned int, std::function<void(const mavlink::__mavlink_message*, mavconn::Framing)> >::_NotSameTuple<_UElements ...>()), unsigned int, const char*, long unsigned int, std::function<void(const mavlink::__mavlink_message*, mavconn::Framing)> >::_ImplicitlyMoveConvertibleTuple<_UElements ...>()) && (4 >= 1)), bool>::type <anonymous> > constexpr std::tuple<_Elements>::tuple(_UElements&& ...)
+         constexpr tuple(_UElements&&... __elements)
+                   ^~~~~
+/usr/include/c++/7/tuple:646:19: note:   template argument deduction/substitution failed:
+/usr/include/c++/7/tuple:619:26: note: candidate: template<class _Dummy, typename std::enable_if<((std::_TC<std::is_same<_Dummy, void>::value, unsigned int, const char*, long unsigned int, std::function<void(const mavlink::__mavlink_message*, mavconn::Framing)> >::_ConstructibleTuple<unsigned int, const char*, long unsigned int, function<void(const mavlink::__mavlink_message*, mavconn::Framing)> >() && (! std::_TC<std::is_same<_Dummy, void>::value, unsigned int, const char*, long unsigned int, std::function<void(const mavlink::__mavlink_message*, mavconn::Framing)> >::_ImplicitlyConvertibleTuple<unsigned int, const char*, long unsigned int, function<void(const mavlink::__mavlink_message*, mavconn::Framing)> >())) && (4 >= 1)), bool>::type <anonymous> > constexpr std::tuple<_Elements>::tuple(const _Elements& ...)
+       explicit constexpr tuple(const _Elements&... __elements)
+                          ^~~~~
+/usr/include/c++/7/tuple:619:26: note:   template argument deduction/substitution failed:
+In file included from /home/hemanth/neural_fly/src/mavros/mavros/src/plugins/dummy.cpp:18:0:
+/home/hemanth/neural_fly/src/mavros/mavros/include/mavros/mavros_plugin.h:119:3: note:   cannot convert ‘id’ (type ‘<type error>’) to type ‘const unsigned int&’
+   };
+   ^
+In file included from /home/hemanth/neural_fly/src/mavros/mavros/include/mavros/mavros_plugin.h:20:0,
+                 from /home/hemanth/neural_fly/src/mavros/mavros/src/plugins/dummy.cpp:18:
+/usr/include/c++/7/tuple:608:19: note: candidate: template<class _Dummy, typename std::enable_if<((std::_TC<std::is_same<_Dummy, void>::value, unsigned int, const char*, long unsigned int, std::function<void(const mavlink::__mavlink_message*, mavconn::Framing)> >::_ConstructibleTuple<unsigned int, const char*, long unsigned int, function<void(const mavlink::__mavlink_message*, mavconn::Framing)> >() && std::_TC<std::is_same<_Dummy, void>::value, unsigned int, const char*, long unsigned int, std::function<void(const mavlink::__mavlink_message*, mavconn::Framing)> >::_ImplicitlyConvertibleTuple<unsigned int, const char*, long unsigned int, function<void(const mavlink::__mavlink_message*, mavconn::Framing)> >()) && (4 >= 1)), bool>::type <anonymous> > constexpr std::tuple<_Elements>::tuple(const _Elements& ...)
+         constexpr tuple(const _Elements&... __elements)
+                   ^~~~~
+/usr/include/c++/7/tuple:608:19: note:   template argument deduction/substitution failed:
+In file included from /home/hemanth/neural_fly/src/mavros/mavros/src/plugins/dummy.cpp:18:0:
+/home/hemanth/neural_fly/src/mavros/mavros/include/mavros/mavros_plugin.h:119:3: note:   cannot convert ‘id’ (type ‘<type error>’) to type ‘const unsigned int&’
+   };
+   ^
+In file included from /home/hemanth/neural_fly/src/mavros/mavros/include/mavros/mavros_plugin.h:20:0,
+                 from /home/hemanth/neural_fly/src/mavros/mavros/src/plugins/dummy.cpp:18:
+/usr/include/c++/7/tuple:591:26: note: candidate: template<class _Dummy, typename std::enable_if<(std::tuple<unsigned int, const char*, long unsigned int, std::function<void(const mavlink::__mavlink_message*, mavconn::Framing)> >::_TC2<_Dummy>::_DefaultConstructibleTuple() && (! std::tuple<unsigned int, const char*, long unsigned int, std::function<void(const mavlink::__mavlink_message*, mavconn::Framing)> >::_TC2<_Dummy>::_ImplicitlyDefaultConstructibleTuple())), bool>::type <anonymous> > constexpr std::tuple<_Elements>::tuple()
+       explicit constexpr tuple()
+                          ^~~~~
+/usr/include/c++/7/tuple:591:26: note:   template argument deduction/substitution failed:
+In file included from /home/hemanth/neural_fly/src/mavros/mavros/src/plugins/dummy.cpp:18:0:
+/home/hemanth/neural_fly/src/mavros/mavros/include/mavros/mavros_plugin.h:119:3: note:   candidate expects 0 arguments, 4 provided
+   };
+   ^
+In file included from /home/hemanth/neural_fly/src/mavros/mavros/include/mavros/mavros_plugin.h:20:0,
+                 from /home/hemanth/neural_fly/src/mavros/mavros/src/plugins/dummy.cpp:18:
+/usr/include/c++/7/tuple:581:17: note: candidate: template<class _Dummy, typename std::enable_if<std::tuple<unsigned int, const char*, long unsigned int, std::function<void(const mavlink::__mavlink_message*, mavconn::Framing)> >::_TC2<_Dummy>::_ImplicitlyDefaultConstructibleTuple(), bool>::type <anonymous> > constexpr std::tuple<_Elements>::tuple()
+       constexpr tuple()
+                 ^~~~~
+/usr/include/c++/7/tuple:581:17: note:   template argument deduction/substitution failed:
+In file included from /home/hemanth/neural_fly/src/mavros/mavros/src/plugins/dummy.cpp:18:0:
+/home/hemanth/neural_fly/src/mavros/mavros/include/mavros/mavros_plugin.h:119:3: note:   candidate expects 0 arguments, 4 provided
+   };
+   ^
+make[2]: *** [CMakeFiles/mavros_plugins.dir/src/plugins/dummy.cpp.o] Error 1
+make[2]: *** Waiting for unfinished jobs....
+/home/hemanth/neural_fly/src/mavros/mavros/src/plugins/command.cpp: In member function ‘void mavros::std_plugins::CommandPlugin::set_target(MsgT&, bool)’:
+/home/hemanth/neural_fly/src/mavros/mavros/src/plugins/command.cpp:236:26: error: ‘mavlink::common::MAV_COMPONENT’ has not been declared
+   using mavlink::common::MAV_COMPONENT;
+                          ^~~~~~~~~~~~~
+/home/hemanth/neural_fly/src/mavros/mavros/src/plugins/command.cpp:241:15: error: ‘MAV_COMPONENT’ has not been declared
+    enum_value(MAV_COMPONENT::COMP_ID_SYSTEM_CONTROL) : m_uas->get_tgt_component();
+               ^~~~~~~~~~~~~
+make[2]: *** [CMakeFiles/mavros_plugins.dir/src/plugins/command.cpp.o] Error 1
+make[1]: *** [CMakeFiles/mavros_plugins.dir/all] Error 2
+make: *** [all] Error 2

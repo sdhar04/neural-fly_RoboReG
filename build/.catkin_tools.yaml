@@ -1,0 +1,6 @@
+devel_space: /home/hemanth/neural_fly/devel
+install: false
+install_space: /home/hemanth/neural_fly/install
+profile: default
+source_space: /home/hemanth/neural_fly/src
+workspace: /home/hemanth/neural_fly

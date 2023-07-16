@@ -1,0 +1,8 @@
+prefix=/home/hemanth/neural_fly/devel/.private/msf_distort
+
+Name: msf_distort
+Description: Description of msf_distort
+Version: 1.0.1
+Cflags: -I/home/hemanth/neural_fly/devel/.private/msf_distort/include -I/home/hemanth/neural_fly/devel/.private/msf_core/include -I/home/hemanth/neural_fly/src/ethzasl_msf/msf_timing/include -I/home/hemanth/neural_fly/src/ethzasl_msf/msf_core/include -I/home/hemanth/catkin_ws1/devel/include -I/opt/ros/melodic/include -I/opt/ros/melodic/share/xmlrpcpp/cmake/../../../include/xmlrpcpp -I/usr/include/eigen3 -I/usr/include -I/usr/include/opencv
+Libs: -L${prefix}/lib 
+Requires: msf_core std_msgs visualization_msgs sensor_msgs image_transport image_geometry geometry_msgs dynamic_reconfigure

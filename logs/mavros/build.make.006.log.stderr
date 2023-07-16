@@ -1,0 +1,40 @@
+/home/hemanth/neural_fly/src/mavros/mavros/src/plugins/sys_status.cpp: In member function ‘void mavros::std_plugins::SystemStatusPlugin::heartbeat_cb(const ros::TimerEvent&)’:
+/home/hemanth/neural_fly/src/mavros/mavros/src/plugins/sys_status.cpp:920:27: error: ‘mavlink::minimal::MAV_MODE’ has not been declared
+   using mavlink::minimal::MAV_MODE;
+                           ^~~~~~~~
+/home/hemanth/neural_fly/src/mavros/mavros/src/plugins/sys_status.cpp:922:25: error: ‘HEARTBEAT’ is not a member of ‘mavlink::common::msg’
+   mavlink::common::msg::HEARTBEAT hb {};
+                         ^~~~~~~~~
+/home/hemanth/neural_fly/src/mavros/mavros/src/plugins/sys_status.cpp:922:25: note: suggested alternative:
+In file included from /opt/ros/melodic/include/mavlink/v2.0/common/../standard/../minimal/minimal.hpp:312:0,
+                 from /opt/ros/melodic/include/mavlink/v2.0/common/../standard/standard.hpp:42,
+                 from /opt/ros/melodic/include/mavlink/v2.0/common/common.hpp:2674,
+                 from /home/hemanth/neural_fly/src/mavros/libmavconn/include/mavconn/mavlink_dialect.h:26,
+                 from /home/hemanth/neural_fly/src/mavros/libmavconn/include/mavconn/interface.h:37,
+                 from /home/hemanth/neural_fly/src/mavros/mavros/include/mavros/mavros_plugin.h:24,
+                 from /home/hemanth/neural_fly/src/mavros/mavros/src/plugins/sys_status.cpp:17:
+/opt/ros/melodic/include/mavlink/v2.0/common/../standard/../minimal/./mavlink_msg_heartbeat.hpp:14:8: note:   ‘mavlink::minimal::msg::HEARTBEAT’
+ struct HEARTBEAT : mavlink::Message {
+        ^~~~~~~~~
+/home/hemanth/neural_fly/src/mavros/mavros/src/plugins/sys_status.cpp:924:3: error: ‘hb’ was not declared in this scope
+   hb.type = enum_value(conn_heartbeat_mav_type); //! @todo patch PX4 so it can also handle this type as datalink
+   ^~
+/home/hemanth/neural_fly/src/mavros/mavros/src/plugins/sys_status.cpp:926:29: error: ‘MAV_MODE’ has not been declared
+   hb.base_mode = enum_value(MAV_MODE::MANUAL_ARMED);
+                             ^~~~~~~~
+/home/hemanth/neural_fly/src/mavros/mavros/src/plugins/sys_status.cpp: In member function ‘bool mavros::std_plugins::SystemStatusPlugin::set_mode_cb(mavros_msgs::SetMode::Request&, mavros_msgs::SetMode::Response&)’:
+/home/hemanth/neural_fly/src/mavros/mavros/src/plugins/sys_status.cpp:1041:26: error: ‘mavlink::common::MAV_MODE_FLAG’ has not been declared
+   using mavlink::common::MAV_MODE_FLAG;
+                          ^~~~~~~~~~~~~
+/home/hemanth/neural_fly/src/mavros/mavros/src/plugins/sys_status.cpp:1057:51: error: ‘MAV_MODE_FLAG’ has not been declared
+    base_mode |= (m_uas->get_armed()) ? enum_value(MAV_MODE_FLAG::SAFETY_ARMED) : 0;
+                                                   ^~~~~~~~~~~~~
+/home/hemanth/neural_fly/src/mavros/mavros/src/plugins/sys_status.cpp:1058:55: error: ‘MAV_MODE_FLAG’ has not been declared
+    base_mode |= (m_uas->get_hil_state()) ? enum_value(MAV_MODE_FLAG::HIL_ENABLED) : 0;
+                                                       ^~~~~~~~~~~~~
+/home/hemanth/neural_fly/src/mavros/mavros/src/plugins/sys_status.cpp:1059:28: error: ‘MAV_MODE_FLAG’ has not been declared
+    base_mode |= enum_value(MAV_MODE_FLAG::CUSTOM_MODE_ENABLED);
+                            ^~~~~~~~~~~~~
+make[2]: *** [CMakeFiles/mavros_plugins.dir/src/plugins/sys_status.cpp.o] Error 1
+make[1]: *** [CMakeFiles/mavros_plugins.dir/all] Error 2
+make: *** [all] Error 2

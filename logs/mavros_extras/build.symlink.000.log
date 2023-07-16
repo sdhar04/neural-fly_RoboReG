@@ -1,0 +1,6 @@
+Symlinking /home/hemanth/neural_fly/devel/share/mavros_extras/cmake/mavros_extrasConfig-version.cmake
+Symlinking /home/hemanth/neural_fly/devel/share/mavros_extras/cmake/mavros_extrasConfig.cmake
+Symlinking /home/hemanth/neural_fly/devel/lib/libmavros_extras.so
+Symlinking /home/hemanth/neural_fly/devel/lib/mavros_extras/visualization
+Symlinking /home/hemanth/neural_fly/devel/lib/mavros_extras/servo_state_publisher
+Symlinking /home/hemanth/neural_fly/devel/lib/pkgconfig/mavros_extras.pc

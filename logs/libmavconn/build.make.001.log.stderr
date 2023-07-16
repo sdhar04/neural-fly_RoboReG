@@ -1,0 +1,15 @@
+/home/hemanth/neural_fly/src/mavros-0.18.4/libmavconn/src/mavlink_helpers.cpp: In static member function ‘static void mavconn::MAVConnInterface::init_msg_entry()’:
+/home/hemanth/neural_fly/src/mavros-0.18.4/libmavconn/src/mavlink_helpers.cpp:30:2: error: ‘logDebug’ was not declared in this scope
+  logDebug("mavconn: Initialize message_entries map");
+  ^~~~~~~~
+/home/hemanth/neural_fly/src/mavros-0.18.4/libmavconn/src/mavlink_helpers.cpp:30:2: note: suggested alternative: ‘logbl’
+  logDebug("mavconn: Initialize message_entries map");
+  ^~~~~~~~
+  logbl
+/home/hemanth/neural_fly/src/mavros-0.18.4/libmavconn/src/mavlink_helpers.cpp: In lambda function:
+/home/hemanth/neural_fly/src/mavros-0.18.4/libmavconn/src/mavlink_helpers.cpp:36:5: error: ‘logWarn’ was not declared in this scope
+     logWarn("mavconn: init: message from %s, MSG-ID %d ignored! Table has different entry.", dialect, e.msgid);
+     ^~~~~~~
+make[2]: *** [CMakeFiles/mavconn.dir/src/mavlink_helpers.cpp.o] Error 1
+make[1]: *** [CMakeFiles/mavconn.dir/all] Error 2
+make: *** [all] Error 2

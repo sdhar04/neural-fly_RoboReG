@@ -1,0 +1,2 @@
+- setup-file:
+    local-name: /home/hemanth/neural_fly/devel/.private/sensor_fusion_comm/setup.sh

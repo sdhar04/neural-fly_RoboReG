@@ -1,0 +1,241 @@
+/home/hemanth/neural_fly/src/mavros/mavros/src/plugins/sys_status.cpp:687:85: error: ‘mavlink::common::msg::HEARTBEAT’ has not been declared
+  void handle_heartbeat(const mavlink::mavlink_message_t *msg, mavlink::common::msg::HEARTBEAT &hb)
+                                                                                     ^~~~~~~~~
+/home/hemanth/neural_fly/src/mavros/mavros/src/plugins/sys_status.cpp: In member function ‘void mavros::std_plugins::SystemStatusPlugin::handle_heartbeat(const mavlink_message_t*, int&)’:
+/home/hemanth/neural_fly/src/mavros/mavros/src/plugins/sys_status.cpp:689:26: error: ‘mavlink::common::MAV_MODE_FLAG’ has not been declared
+   using mavlink::common::MAV_MODE_FLAG;
+                          ^~~~~~~~~~~~~
+/home/hemanth/neural_fly/src/mavros/mavros/src/plugins/sys_status.cpp:694:46: error: request for member ‘base_mode’ in ‘hb’, which is of non-class type ‘int’
+   auto vehicle_mode = m_uas->str_mode_v10(hb.base_mode, hb.custom_mode);
+                                              ^~~~~~~~~
+/home/hemanth/neural_fly/src/mavros/mavros/src/plugins/sys_status.cpp:694:60: error: request for member ‘custom_mode’ in ‘hb’, which is of non-class type ‘int’
+   auto vehicle_mode = m_uas->str_mode_v10(hb.base_mode, hb.custom_mode);
+                                                            ^~~~~~~~~~~
+/home/hemanth/neural_fly/src/mavros/mavros/src/plugins/sys_status.cpp:700:29: error: request for member ‘autopilot’ in ‘hb’, which is of non-class type ‘int’
+   it->second.autopilot = hb.autopilot;
+                             ^~~~~~~~~
+/home/hemanth/neural_fly/src/mavros/mavros/src/plugins/sys_status.cpp:701:24: error: request for member ‘type’ in ‘hb’, which is of non-class type ‘int’
+   it->second.type = hb.type;
+                        ^~~~
+/home/hemanth/neural_fly/src/mavros/mavros/src/plugins/sys_status.cpp:702:33: error: request for member ‘system_status’ in ‘hb’, which is of non-class type ‘int’
+   it->second.system_status = hb.system_status;
+                                 ^~~~~~~~~~~~~
+/home/hemanth/neural_fly/src/mavros/mavros/src/plugins/sys_status.cpp:703:29: error: request for member ‘base_mode’ in ‘hb’, which is of non-class type ‘int’
+   it->second.base_mode = hb.base_mode;
+                             ^~~~~~~~~
+/home/hemanth/neural_fly/src/mavros/mavros/src/plugins/sys_status.cpp:704:31: error: request for member ‘custom_mode’ in ‘hb’, which is of non-class type ‘int’
+   it->second.custom_mode = hb.custom_mode;
+                               ^~~~~~~~~~~
+/home/hemanth/neural_fly/src/mavros/mavros/src/plugins/sys_status.cpp:707:12: error: request for member ‘base_mode’ in ‘hb’, which is of non-class type ‘int’
+   if (!(hb.base_mode & enum_value(MAV_MODE_FLAG::CUSTOM_MODE_ENABLED))) {
+            ^~~~~~~~~
+/home/hemanth/neural_fly/src/mavros/mavros/src/plugins/sys_status.cpp:707:35: error: ‘MAV_MODE_FLAG’ has not been declared
+   if (!(hb.base_mode & enum_value(MAV_MODE_FLAG::CUSTOM_MODE_ENABLED))) {
+                                   ^~~~~~~~~~~~~
+/home/hemanth/neural_fly/src/mavros/mavros/src/plugins/sys_status.cpp:708:28: error: request for member ‘base_mode’ in ‘hb’, which is of non-class type ‘int’
+    it->second.mode_id = hb.base_mode;
+                            ^~~~~~~~~
+/home/hemanth/neural_fly/src/mavros/mavros/src/plugins/sys_status.cpp:710:28: error: request for member ‘custom_mode’ in ‘hb’, which is of non-class type ‘int’
+    it->second.mode_id = hb.custom_mode;
+                            ^~~~~~~~~~~
+/home/hemanth/neural_fly/src/mavros/mavros/src/plugins/sys_status.cpp:720:30: error: request for member ‘type’ in ‘hb’, which is of non-class type ‘int’
+   m_uas->update_heartbeat(hb.type, hb.autopilot, hb.base_mode);
+                              ^~~~
+/home/hemanth/neural_fly/src/mavros/mavros/src/plugins/sys_status.cpp:720:39: error: request for member ‘autopilot’ in ‘hb’, which is of non-class type ‘int’
+   m_uas->update_heartbeat(hb.type, hb.autopilot, hb.base_mode);
+                                       ^~~~~~~~~
+/home/hemanth/neural_fly/src/mavros/mavros/src/plugins/sys_status.cpp:720:53: error: request for member ‘base_mode’ in ‘hb’, which is of non-class type ‘int’
+   m_uas->update_heartbeat(hb.type, hb.autopilot, hb.base_mode);
+                                                     ^~~~~~~~~
+/home/hemanth/neural_fly/src/mavros/mavros/src/plugins/sys_status.cpp:729:28: error: request for member ‘base_mode’ in ‘hb’, which is of non-class type ‘int’
+   state_msg->armed = !!(hb.base_mode & enum_value(MAV_MODE_FLAG::SAFETY_ARMED));
+                            ^~~~~~~~~
+/home/hemanth/neural_fly/src/mavros/mavros/src/plugins/sys_status.cpp:729:51: error: ‘MAV_MODE_FLAG’ has not been declared
+   state_msg->armed = !!(hb.base_mode & enum_value(MAV_MODE_FLAG::SAFETY_ARMED));
+                                                   ^~~~~~~~~~~~~
+/home/hemanth/neural_fly/src/mavros/mavros/src/plugins/sys_status.cpp:730:29: error: request for member ‘base_mode’ in ‘hb’, which is of non-class type ‘int’
+   state_msg->guided = !!(hb.base_mode & enum_value(MAV_MODE_FLAG::GUIDED_ENABLED));
+                             ^~~~~~~~~
+/home/hemanth/neural_fly/src/mavros/mavros/src/plugins/sys_status.cpp:730:52: error: ‘MAV_MODE_FLAG’ has not been declared
+   state_msg->guided = !!(hb.base_mode & enum_value(MAV_MODE_FLAG::GUIDED_ENABLED));
+                                                    ^~~~~~~~~~~~~
+/home/hemanth/neural_fly/src/mavros/mavros/src/plugins/sys_status.cpp:731:35: error: request for member ‘base_mode’ in ‘hb’, which is of non-class type ‘int’
+   state_msg->manual_input = !!(hb.base_mode & enum_value(MAV_MODE_FLAG::MANUAL_INPUT_ENABLED));
+                                   ^~~~~~~~~
+/home/hemanth/neural_fly/src/mavros/mavros/src/plugins/sys_status.cpp:731:58: error: ‘MAV_MODE_FLAG’ has not been declared
+   state_msg->manual_input = !!(hb.base_mode & enum_value(MAV_MODE_FLAG::MANUAL_INPUT_ENABLED));
+                                                          ^~~~~~~~~~~~~
+/home/hemanth/neural_fly/src/mavros/mavros/src/plugins/sys_status.cpp:733:33: error: request for member ‘system_status’ in ‘hb’, which is of non-class type ‘int’
+   state_msg->system_status = hb.system_status;
+                                 ^~~~~~~~~~~~~
+/home/hemanth/neural_fly/src/mavros/mavros/src/plugins/sys_status.cpp:736:19: error: request for member ‘type’ in ‘hb’, which is of non-class type ‘int’
+   hb_diag.tick(hb.type, hb.autopilot, state_msg->mode, hb.system_status);
+                   ^~~~
+/home/hemanth/neural_fly/src/mavros/mavros/src/plugins/sys_status.cpp:736:28: error: request for member ‘autopilot’ in ‘hb’, which is of non-class type ‘int’
+   hb_diag.tick(hb.type, hb.autopilot, state_msg->mode, hb.system_status);
+                            ^~~~~~~~~
+/home/hemanth/neural_fly/src/mavros/mavros/src/plugins/sys_status.cpp:736:59: error: request for member ‘system_status’ in ‘hb’, which is of non-class type ‘int’
+   hb_diag.tick(hb.type, hb.autopilot, state_msg->mode, hb.system_status);
+                                                           ^~~~~~~~~~~~~
+/home/hemanth/neural_fly/src/mavros/mavros/src/plugins/sys_status.cpp: In member function ‘void mavros::std_plugins::SystemStatusPlugin::heartbeat_cb(const ros::TimerEvent&)’:
+/home/hemanth/neural_fly/src/mavros/mavros/src/plugins/sys_status.cpp:922:25: error: ‘HEARTBEAT’ is not a member of ‘mavlink::common::msg’
+   mavlink::common::msg::HEARTBEAT hb {};
+                         ^~~~~~~~~
+/home/hemanth/neural_fly/src/mavros/mavros/src/plugins/sys_status.cpp:922:25: note: suggested alternative:
+In file included from /opt/ros/melodic/include/mavlink/v2.0/common/../standard/../minimal/minimal.hpp:312:0,
+                 from /opt/ros/melodic/include/mavlink/v2.0/common/../standard/standard.hpp:42,
+                 from /opt/ros/melodic/include/mavlink/v2.0/common/common.hpp:2674,
+                 from /home/hemanth/neural_fly/src/mavros/libmavconn/include/mavconn/mavlink_dialect.h:26,
+                 from /home/hemanth/neural_fly/src/mavros/libmavconn/include/mavconn/interface.h:37,
+                 from /home/hemanth/neural_fly/src/mavros/mavros/include/mavros/mavros_plugin.h:24,
+                 from /home/hemanth/neural_fly/src/mavros/mavros/src/plugins/sys_status.cpp:17:
+/opt/ros/melodic/include/mavlink/v2.0/common/../standard/../minimal/./mavlink_msg_heartbeat.hpp:14:8: note:   ‘mavlink::minimal::msg::HEARTBEAT’
+ struct HEARTBEAT : mavlink::Message {
+        ^~~~~~~~~
+/home/hemanth/neural_fly/src/mavros/mavros/src/plugins/sys_status.cpp:924:3: error: ‘hb’ was not declared in this scope
+   hb.type = enum_value(conn_heartbeat_mav_type); //! @todo patch PX4 so it can also handle this type as datalink
+   ^~
+/home/hemanth/neural_fly/src/mavros/mavros/src/plugins/sys_status.cpp: In member function ‘bool mavros::std_plugins::SystemStatusPlugin::set_mode_cb(mavros_msgs::SetMode::Request&, mavros_msgs::SetMode::Response&)’:
+/home/hemanth/neural_fly/src/mavros/mavros/src/plugins/sys_status.cpp:1041:26: error: ‘mavlink::common::MAV_MODE_FLAG’ has not been declared
+   using mavlink::common::MAV_MODE_FLAG;
+                          ^~~~~~~~~~~~~
+/home/hemanth/neural_fly/src/mavros/mavros/src/plugins/sys_status.cpp:1057:51: error: ‘MAV_MODE_FLAG’ has not been declared
+    base_mode |= (m_uas->get_armed()) ? enum_value(MAV_MODE_FLAG::SAFETY_ARMED) : 0;
+                                                   ^~~~~~~~~~~~~
+/home/hemanth/neural_fly/src/mavros/mavros/src/plugins/sys_status.cpp:1058:55: error: ‘MAV_MODE_FLAG’ has not been declared
+    base_mode |= (m_uas->get_hil_state()) ? enum_value(MAV_MODE_FLAG::HIL_ENABLED) : 0;
+                                                       ^~~~~~~~~~~~~
+/home/hemanth/neural_fly/src/mavros/mavros/src/plugins/sys_status.cpp:1059:28: error: ‘MAV_MODE_FLAG’ has not been declared
+    base_mode |= enum_value(MAV_MODE_FLAG::CUSTOM_MODE_ENABLED);
+                            ^~~~~~~~~~~~~
+In file included from /home/hemanth/neural_fly/src/mavros/mavros/src/plugins/sys_status.cpp:17:0:
+/home/hemanth/neural_fly/src/mavros/mavros/include/mavros/mavros_plugin.h: In instantiation of ‘mavros::plugin::PluginBase::HandlerInfo mavros::plugin::PluginBase::make_handler(void (_C::*)(const mavlink_message_t*, _T&)) [with _C = mavros::std_plugins::SystemStatusPlugin; _T = int; mavros::plugin::PluginBase::HandlerInfo = std::tuple<unsigned int, const char*, long unsigned int, std::function<void(const mavlink::__mavlink_message*, mavconn::Framing)> >; mavlink::mavlink_message_t = mavlink::__mavlink_message]’:
+/home/hemanth/neural_fly/src/mavros/mavros/src/plugins/sys_status.cpp:500:54:   required from here
+/home/hemanth/neural_fly/src/mavros/mavros/include/mavros/mavros_plugin.h:103:14: error: ‘MSG_ID’ is not a member of ‘int’
+   const auto id = _T::MSG_ID;
+              ^~
+/home/hemanth/neural_fly/src/mavros/mavros/include/mavros/mavros_plugin.h:104:14: error: ‘NAME’ is not a member of ‘int’
+   const auto name = _T::NAME;
+              ^~~~
+/home/hemanth/neural_fly/src/mavros/mavros/include/mavros/mavros_plugin.h:119:3: error: no matching function for call to ‘std::tuple<unsigned int, const char*, long unsigned int, std::function<void(const mavlink::__mavlink_message*, mavconn::Framing)> >::tuple(<brace-enclosed initializer list>)’
+   };
+   ^
+In file included from /home/hemanth/neural_fly/src/mavros/mavros/include/mavros/mavros_plugin.h:20:0,
+                 from /home/hemanth/neural_fly/src/mavros/mavros/src/plugins/sys_status.cpp:17:
+/usr/include/c++/7/tuple:828:11: note: candidate: template<class _Alloc, class _Dummy, class ... _UElements, typename std::enable_if<((std::_TC<((4 == sizeof... (_UElements)) && (! std::is_same<std::tuple<unsigned int, const char*, long unsigned int, std::function<void(const mavlink::__mavlink_message*, mavconn::Framing)> >, std::tuple<_Tail ...> >::value)), unsigned int, const char*, long unsigned int, std::function<void(const mavlink::__mavlink_message*, mavconn::Framing)> >::_MoveConstructibleTuple<_UElements ...>() && (! std::_TC<((4 == sizeof... (_UElements)) && (! std::is_same<std::tuple<unsigned int, const char*, long unsigned int, std::function<void(const mavlink::__mavlink_message*, mavconn::Framing)> >, std::tuple<_Tail ...> >::value)), unsigned int, const char*, long unsigned int, std::function<void(const mavlink::__mavlink_message*, mavconn::Framing)> >::_ImplicitlyMoveConvertibleTuple<_UElements ...>())) && std::_TC<(std::is_same<_Dummy, void>::value && (4 == 1)), unsigned int, const char*, long unsigned int, std::function<void(const mavlink::__mavlink_message*, mavconn::Framing)> >::_NonNestedTuple<tuple<_Tail ...>&&>()), bool>::type <anonymous> > std::tuple<_Elements>::tuple(std::allocator_arg_t, const _Alloc&, std::tuple<_Args2 ...>&&)
+  explicit tuple(allocator_arg_t __tag, const _Alloc& __a,
+           ^~~~~
+/usr/include/c++/7/tuple:828:11: note:   template argument deduction/substitution failed:
+/usr/include/c++/7/tuple:813:2: note: candidate: template<class _Alloc, class _Dummy, class ... _UElements, typename std::enable_if<((std::_TC<((4 == sizeof... (_UElements)) && (! std::is_same<std::tuple<unsigned int, const char*, long unsigned int, std::function<void(const mavlink::__mavlink_message*, mavconn::Framing)> >, std::tuple<_Tail ...> >::value)), unsigned int, const char*, long unsigned int, std::function<void(const mavlink::__mavlink_message*, mavconn::Framing)> >::_MoveConstructibleTuple<_UElements ...>() && std::_TC<((4 == sizeof... (_UElements)) && (! std::is_same<std::tuple<unsigned int, const char*, long unsigned int, std::function<void(const mavlink::__mavlink_message*, mavconn::Framing)> >, std::tuple<_Tail ...> >::value)), unsigned int, const char*, long unsigned int, std::function<void(const mavlink::__mavlink_message*, mavconn::Framing)> >::_ImplicitlyMoveConvertibleTuple<_UElements ...>()) && std::_TC<(std::is_same<_Dummy, void>::value && (4 == 1)), unsigned int, const char*, long unsigned int, std::function<void(const mavlink::__mavlink_message*, mavconn::Framing)> >::_NonNestedTuple<tuple<_Tail ...>&&>()), bool>::type <anonymous> > std::tuple<_Elements>::tuple(std::allocator_arg_t, const _Alloc&, std::tuple<_Args2 ...>&&)
+  tuple(allocator_arg_t __tag, const _Alloc& __a,
+  ^~~~~
+/usr/include/c++/7/tuple:813:2: note:   template argument deduction/substitution failed:
+/usr/include/c++/7/tuple:798:11: note: candidate: template<class _Alloc, class _Dummy, class ... _UElements, typename std::enable_if<((std::_TC<((4 == sizeof... (_UElements)) && (! std::is_same<std::tuple<unsigned int, const char*, long unsigned int, std::function<void(const mavlink::__mavlink_message*, mavconn::Framing)> >, std::tuple<_Tail ...> >::value)), unsigned int, const char*, long unsigned int, std::function<void(const mavlink::__mavlink_message*, mavconn::Framing)> >::_ConstructibleTuple<_UElements ...>() && (! std::_TC<((4 == sizeof... (_UElements)) && (! std::is_same<std::tuple<unsigned int, const char*, long unsigned int, std::function<void(const mavlink::__mavlink_message*, mavconn::Framing)> >, std::tuple<_Tail ...> >::value)), unsigned int, const char*, long unsigned int, std::function<void(const mavlink::__mavlink_message*, mavconn::Framing)> >::_ImplicitlyConvertibleTuple<_UElements ...>())) && std::_TC<(std::is_same<_Dummy, void>::value && (4 == 1)), unsigned int, const char*, long unsigned int, std::function<void(const mavlink::__mavlink_message*, mavconn::Framing)> >::_NonNestedTuple<tuple<_Tail ...>&&>()), bool>::type <anonymous> > std::tuple<_Elements>::tuple(std::allocator_arg_t, const _Alloc&, const std::tuple<_Args2 ...>&)
+  explicit tuple(allocator_arg_t __tag, const _Alloc& __a,
+           ^~~~~
+/usr/include/c++/7/tuple:798:11: note:   template argument deduction/substitution failed:
+/usr/include/c++/7/tuple:783:2: note: candidate: template<class _Alloc, class _Dummy, class ... _UElements, typename std::enable_if<((std::_TC<((4 == sizeof... (_UElements)) && (! std::is_same<std::tuple<unsigned int, const char*, long unsigned int, std::function<void(const mavlink::__mavlink_message*, mavconn::Framing)> >, std::tuple<_Tail ...> >::value)), unsigned int, const char*, long unsigned int, std::function<void(const mavlink::__mavlink_message*, mavconn::Framing)> >::_ConstructibleTuple<_UElements ...>() && std::_TC<((4 == sizeof... (_UElements)) && (! std::is_same<std::tuple<unsigned int, const char*, long unsigned int, std::function<void(const mavlink::__mavlink_message*, mavconn::Framing)> >, std::tuple<_Tail ...> >::value)), unsigned int, const char*, long unsigned int, std::function<void(const mavlink::__mavlink_message*, mavconn::Framing)> >::_ImplicitlyConvertibleTuple<_UElements ...>()) && std::_TC<(std::is_same<_Dummy, void>::value && (4 == 1)), unsigned int, const char*, long unsigned int, std::function<void(const mavlink::__mavlink_message*, mavconn::Framing)> >::_NonNestedTuple<tuple<_Tail ...>&&>()), bool>::type <anonymous> > std::tuple<_Elements>::tuple(std::allocator_arg_t, const _Alloc&, const std::tuple<_Args2 ...>&)
+  tuple(allocator_arg_t __tag, const _Alloc& __a,
+  ^~~~~
+/usr/include/c++/7/tuple:783:2: note:   template argument deduction/substitution failed:
+/usr/include/c++/7/tuple:771:2: note: candidate: template<class _Alloc> std::tuple<_Elements>::tuple(std::allocator_arg_t, const _Alloc&, std::tuple<_Elements>&&)
+  tuple(allocator_arg_t __tag, const _Alloc& __a, tuple&& __in)
+  ^~~~~
+/usr/include/c++/7/tuple:771:2: note:   template argument deduction/substitution failed:
+/usr/include/c++/7/tuple:767:2: note: candidate: template<class _Alloc> std::tuple<_Elements>::tuple(std::allocator_arg_t, const _Alloc&, const std::tuple<_Elements>&)
+  tuple(allocator_arg_t __tag, const _Alloc& __a, const tuple& __in)
+  ^~~~~
+/usr/include/c++/7/tuple:767:2: note:   template argument deduction/substitution failed:
+/usr/include/c++/7/tuple:761:11: note: candidate: template<class _Alloc, class ... _UElements, typename std::enable_if<(std::_TC<((4 == sizeof... (_UElements)) && std::_TC<(sizeof... (_UElements) == 1), unsigned int, const char*, long unsigned int, std::function<void(const mavlink::__mavlink_message*, mavconn::Framing)> >::_NotSameTuple<_UElements ...>()), unsigned int, const char*, long unsigned int, std::function<void(const mavlink::__mavlink_message*, mavconn::Framing)> >::_MoveConstructibleTuple<_UElements ...>() && (! std::_TC<((4 == sizeof... (_UElements)) && std::_TC<(sizeof... (_UElements) == 1), unsigned int, const char*, long unsigned int, std::function<void(const mavlink::__mavlink_message*, mavconn::Framing)> >::_NotSameTuple<_UElements ...>()), unsigned int, const char*, long unsigned int, std::function<void(const mavlink::__mavlink_message*, mavconn::Framing)> >::_ImplicitlyMoveConvertibleTuple<_UElements ...>())), bool>::type <anonymous> > std::tuple<_Elements>::tuple(std::allocator_arg_t, const _Alloc&, _UElements&& ...)
+  explicit tuple(allocator_arg_t __tag, const _Alloc& __a,
+           ^~~~~
+/usr/include/c++/7/tuple:761:11: note:   template argument deduction/substitution failed:
+/usr/include/c++/7/tuple:750:2: note: candidate: template<class _Alloc, class ... _UElements, typename std::enable_if<(std::_TC<((4 == sizeof... (_UElements)) && std::_TC<(sizeof... (_UElements) == 1), unsigned int, const char*, long unsigned int, std::function<void(const mavlink::__mavlink_message*, mavconn::Framing)> >::_NotSameTuple<_UElements ...>()), unsigned int, const char*, long unsigned int, std::function<void(const mavlink::__mavlink_message*, mavconn::Framing)> >::_MoveConstructibleTuple<_UElements ...>() && std::_TC<((4 == sizeof... (_UElements)) && std::_TC<(sizeof... (_UElements) == 1), unsigned int, const char*, long unsigned int, std::function<void(const mavlink::__mavlink_message*, mavconn::Framing)> >::_NotSameTuple<_UElements ...>()), unsigned int, const char*, long unsigned int, std::function<void(const mavlink::__mavlink_message*, mavconn::Framing)> >::_ImplicitlyMoveConvertibleTuple<_UElements ...>()), bool>::type <anonymous> > std::tuple<_Elements>::tuple(std::allocator_arg_t, const _Alloc&, _UElements&& ...)
+  tuple(allocator_arg_t __tag, const _Alloc& __a,
+  ^~~~~
+/usr/include/c++/7/tuple:750:2: note:   template argument deduction/substitution failed:
+/usr/include/c++/7/tuple:740:11: note: candidate: template<class _Alloc, class _Dummy, typename std::enable_if<(std::_TC<std::is_same<_Dummy, void>::value, unsigned int, const char*, long unsigned int, std::function<void(const mavlink::__mavlink_message*, mavconn::Framing)> >::_ConstructibleTuple<unsigned int, const char*, long unsigned int, function<void(const mavlink::__mavlink_message*, mavconn::Framing)> >() && (! std::_TC<std::is_same<_Dummy, void>::value, unsigned int, const char*, long unsigned int, std::function<void(const mavlink::__mavlink_message*, mavconn::Framing)> >::_ImplicitlyConvertibleTuple<unsigned int, const char*, long unsigned int, function<void(const mavlink::__mavlink_message*, mavconn::Framing)> >())), bool>::type <anonymous> > std::tuple<_Elements>::tuple(std::allocator_arg_t, const _Alloc&, const _Elements& ...)
+  explicit tuple(allocator_arg_t __tag, const _Alloc& __a,
+           ^~~~~
+/usr/include/c++/7/tuple:740:11: note:   template argument deduction/substitution failed:
+/usr/include/c++/7/tuple:729:2: note: candidate: template<class _Alloc, class _Dummy, typename std::enable_if<(std::_TC<std::is_same<_Dummy, void>::value, unsigned int, const char*, long unsigned int, std::function<void(const mavlink::__mavlink_message*, mavconn::Framing)> >::_ConstructibleTuple<unsigned int, const char*, long unsigned int, function<void(const mavlink::__mavlink_message*, mavconn::Framing)> >() && std::_TC<std::is_same<_Dummy, void>::value, unsigned int, const char*, long unsigned int, std::function<void(const mavlink::__mavlink_message*, mavconn::Framing)> >::_ImplicitlyConvertibleTuple<unsigned int, const char*, long unsigned int, function<void(const mavlink::__mavlink_message*, mavconn::Framing)> >()), bool>::type <anonymous> > std::tuple<_Elements>::tuple(std::allocator_arg_t, const _Alloc&, const _Elements& ...)
+  tuple(allocator_arg_t __tag, const _Alloc& __a,
+  ^~~~~
+/usr/include/c++/7/tuple:729:2: note:   template argument deduction/substitution failed:
+/usr/include/c++/7/tuple:719:2: note: candidate: template<class _Alloc> std::tuple<_Elements>::tuple(std::allocator_arg_t, const _Alloc&)
+  tuple(allocator_arg_t __tag, const _Alloc& __a)
+  ^~~~~
+/usr/include/c++/7/tuple:719:2: note:   template argument deduction/substitution failed:
+/usr/include/c++/7/tuple:713:28: note: candidate: template<class ... _UElements, class _Dummy, typename std::enable_if<((std::_TC<((4 == sizeof... (_UElements)) && (! std::is_same<std::tuple<unsigned int, const char*, long unsigned int, std::function<void(const mavlink::__mavlink_message*, mavconn::Framing)> >, std::tuple<_Tps ...> >::value)), unsigned int, const char*, long unsigned int, std::function<void(const mavlink::__mavlink_message*, mavconn::Framing)> >::_MoveConstructibleTuple<_UElements ...>() && (! std::_TC<((4 == sizeof... (_UElements)) && (! std::is_same<std::tuple<unsigned int, const char*, long unsigned int, std::function<void(const mavlink::__mavlink_message*, mavconn::Framing)> >, std::tuple<_Tps ...> >::value)), unsigned int, const char*, long unsigned int, std::function<void(const mavlink::__mavlink_message*, mavconn::Framing)> >::_ImplicitlyMoveConvertibleTuple<_UElements ...>())) && std::_TC<(std::is_same<_Dummy, void>::value && (4 == 1)), unsigned int, const char*, long unsigned int, std::function<void(const mavlink::__mavlink_message*, mavconn::Framing)> >::_NonNestedTuple<tuple<_Tps ...>&&>()), bool>::type <anonymous> > constexpr std::tuple<_Elements>::tuple(std::tuple<_Args1 ...>&&)
+         explicit constexpr tuple(tuple<_UElements...>&& __in)
+                            ^~~~~
+/usr/include/c++/7/tuple:713:28: note:   template argument deduction/substitution failed:
+/usr/include/c++/7/tuple:702:19: note: candidate: template<class ... _UElements, class _Dummy, typename std::enable_if<((std::_TC<((4 == sizeof... (_UElements)) && (! std::is_same<std::tuple<unsigned int, const char*, long unsigned int, std::function<void(const mavlink::__mavlink_message*, mavconn::Framing)> >, std::tuple<_Tps ...> >::value)), unsigned int, const char*, long unsigned int, std::function<void(const mavlink::__mavlink_message*, mavconn::Framing)> >::_MoveConstructibleTuple<_UElements ...>() && std::_TC<((4 == sizeof... (_UElements)) && (! std::is_same<std::tuple<unsigned int, const char*, long unsigned int, std::function<void(const mavlink::__mavlink_message*, mavconn::Framing)> >, std::tuple<_Tps ...> >::value)), unsigned int, const char*, long unsigned int, std::function<void(const mavlink::__mavlink_message*, mavconn::Framing)> >::_ImplicitlyMoveConvertibleTuple<_UElements ...>()) && std::_TC<(std::is_same<_Dummy, void>::value && (4 == 1)), unsigned int, const char*, long unsigned int, std::function<void(const mavlink::__mavlink_message*, mavconn::Framing)> >::_NonNestedTuple<tuple<_Tps ...>&&>()), bool>::type <anonymous> > constexpr std::tuple<_Elements>::tuple(std::tuple<_Args1 ...>&&)
+         constexpr tuple(tuple<_UElements...>&& __in)
+                   ^~~~~
+/usr/include/c++/7/tuple:702:19: note:   template argument deduction/substitution failed:
+/usr/include/c++/7/tuple:690:28: note: candidate: template<class ... _UElements, class _Dummy, typename std::enable_if<((std::_TC<((4 == sizeof... (_UElements)) && (! std::is_same<std::tuple<unsigned int, const char*, long unsigned int, std::function<void(const mavlink::__mavlink_message*, mavconn::Framing)> >, std::tuple<_Tps ...> >::value)), unsigned int, const char*, long unsigned int, std::function<void(const mavlink::__mavlink_message*, mavconn::Framing)> >::_ConstructibleTuple<_UElements ...>() && (! std::_TC<((4 == sizeof... (_UElements)) && (! std::is_same<std::tuple<unsigned int, const char*, long unsigned int, std::function<void(const mavlink::__mavlink_message*, mavconn::Framing)> >, std::tuple<_Tps ...> >::value)), unsigned int, const char*, long unsigned int, std::function<void(const mavlink::__mavlink_message*, mavconn::Framing)> >::_ImplicitlyConvertibleTuple<_UElements ...>())) && std::_TC<(std::is_same<_Dummy, void>::value && (4 == 1)), unsigned int, const char*, long unsigned int, std::function<void(const mavlink::__mavlink_message*, mavconn::Framing)> >::_NonNestedTuple<const tuple<_Tps ...>&>()), bool>::type <anonymous> > constexpr std::tuple<_Elements>::tuple(const std::tuple<_Args1 ...>&)
+         explicit constexpr tuple(const tuple<_UElements...>& __in)
+                            ^~~~~
+/usr/include/c++/7/tuple:690:28: note:   template argument deduction/substitution failed:
+/usr/include/c++/7/tuple:678:19: note: candidate: template<class ... _UElements, class _Dummy, typename std::enable_if<((std::_TC<((4 == sizeof... (_UElements)) && (! std::is_same<std::tuple<unsigned int, const char*, long unsigned int, std::function<void(const mavlink::__mavlink_message*, mavconn::Framing)> >, std::tuple<_Tps ...> >::value)), unsigned int, const char*, long unsigned int, std::function<void(const mavlink::__mavlink_message*, mavconn::Framing)> >::_ConstructibleTuple<_UElements ...>() && std::_TC<((4 == sizeof... (_UElements)) && (! std::is_same<std::tuple<unsigned int, const char*, long unsigned int, std::function<void(const mavlink::__mavlink_message*, mavconn::Framing)> >, std::tuple<_Tps ...> >::value)), unsigned int, const char*, long unsigned int, std::function<void(const mavlink::__mavlink_message*, mavconn::Framing)> >::_ImplicitlyConvertibleTuple<_UElements ...>()) && std::_TC<(std::is_same<_Dummy, void>::value && (4 == 1)), unsigned int, const char*, long unsigned int, std::function<void(const mavlink::__mavlink_message*, mavconn::Framing)> >::_NonNestedTuple<const tuple<_Tps ...>&>()), bool>::type <anonymous> > constexpr std::tuple<_Elements>::tuple(const std::tuple<_Args1 ...>&)
+         constexpr tuple(const tuple<_UElements...>& __in)
+                   ^~~~~
+/usr/include/c++/7/tuple:678:19: note:   template argument deduction/substitution failed:
+/usr/include/c++/7/tuple:662:17: note: candidate: constexpr std::tuple<_Elements>::tuple(std::tuple<_Elements>&&) [with _Elements = {unsigned int, const char*, long unsigned int, std::function<void(const mavlink::__mavlink_message*, mavconn::Framing)>}]
+       constexpr tuple(tuple&&) = default;
+                 ^~~~~
+/usr/include/c++/7/tuple:662:17: note:   candidate expects 1 argument, 4 provided
+/usr/include/c++/7/tuple:660:17: note: candidate: std::tuple<_Elements>::tuple(const std::tuple<_Elements>&) [with _Elements = {unsigned int, const char*, long unsigned int, std::function<void(const mavlink::__mavlink_message*, mavconn::Framing)>}]
+       constexpr tuple(const tuple&) = default;
+                 ^~~~~
+/usr/include/c++/7/tuple:660:17: note:   candidate expects 1 argument, 4 provided
+/usr/include/c++/7/tuple:657:28: note: candidate: template<class ... _UElements, typename std::enable_if<((std::_TC<((4 == sizeof... (_UElements)) && std::_TC<(sizeof... (_UElements) == 1), unsigned int, const char*, long unsigned int, std::function<void(const mavlink::__mavlink_message*, mavconn::Framing)> >::_NotSameTuple<_UElements ...>()), unsigned int, const char*, long unsigned int, std::function<void(const mavlink::__mavlink_message*, mavconn::Framing)> >::_MoveConstructibleTuple<_UElements ...>() && (! std::_TC<((4 == sizeof... (_UElements)) && std::_TC<(sizeof... (_UElements) == 1), unsigned int, const char*, long unsigned int, std::function<void(const mavlink::__mavlink_message*, mavconn::Framing)> >::_NotSameTuple<_UElements ...>()), unsigned int, const char*, long unsigned int, std::function<void(const mavlink::__mavlink_message*, mavconn::Framing)> >::_ImplicitlyMoveConvertibleTuple<_UElements ...>())) && (4 >= 1)), bool>::type <anonymous> > constexpr std::tuple<_Elements>::tuple(_UElements&& ...)
+         explicit constexpr tuple(_UElements&&... __elements)
+                            ^~~~~
+/usr/include/c++/7/tuple:657:28: note:   template argument deduction/substitution failed:
+/usr/include/c++/7/tuple:646:19: note: candidate: template<class ... _UElements, typename std::enable_if<((std::_TC<((4 == sizeof... (_UElements)) && std::_TC<(sizeof... (_UElements) == 1), unsigned int, const char*, long unsigned int, std::function<void(const mavlink::__mavlink_message*, mavconn::Framing)> >::_NotSameTuple<_UElements ...>()), unsigned int, const char*, long unsigned int, std::function<void(const mavlink::__mavlink_message*, mavconn::Framing)> >::_MoveConstructibleTuple<_UElements ...>() && std::_TC<((4 == sizeof... (_UElements)) && std::_TC<(sizeof... (_UElements) == 1), unsigned int, const char*, long unsigned int, std::function<void(const mavlink::__mavlink_message*, mavconn::Framing)> >::_NotSameTuple<_UElements ...>()), unsigned int, const char*, long unsigned int, std::function<void(const mavlink::__mavlink_message*, mavconn::Framing)> >::_ImplicitlyMoveConvertibleTuple<_UElements ...>()) && (4 >= 1)), bool>::type <anonymous> > constexpr std::tuple<_Elements>::tuple(_UElements&& ...)
+         constexpr tuple(_UElements&&... __elements)
+                   ^~~~~
+/usr/include/c++/7/tuple:646:19: note:   template argument deduction/substitution failed:
+/usr/include/c++/7/tuple:619:26: note: candidate: template<class _Dummy, typename std::enable_if<((std::_TC<std::is_same<_Dummy, void>::value, unsigned int, const char*, long unsigned int, std::function<void(const mavlink::__mavlink_message*, mavconn::Framing)> >::_ConstructibleTuple<unsigned int, const char*, long unsigned int, function<void(const mavlink::__mavlink_message*, mavconn::Framing)> >() && (! std::_TC<std::is_same<_Dummy, void>::value, unsigned int, const char*, long unsigned int, std::function<void(const mavlink::__mavlink_message*, mavconn::Framing)> >::_ImplicitlyConvertibleTuple<unsigned int, const char*, long unsigned int, function<void(const mavlink::__mavlink_message*, mavconn::Framing)> >())) && (4 >= 1)), bool>::type <anonymous> > constexpr std::tuple<_Elements>::tuple(const _Elements& ...)
+       explicit constexpr tuple(const _Elements&... __elements)
+                          ^~~~~
+/usr/include/c++/7/tuple:619:26: note:   template argument deduction/substitution failed:
+In file included from /home/hemanth/neural_fly/src/mavros/mavros/src/plugins/sys_status.cpp:17:0:
+/home/hemanth/neural_fly/src/mavros/mavros/include/mavros/mavros_plugin.h:119:3: note:   cannot convert ‘id’ (type ‘<type error>’) to type ‘const unsigned int&’
+   };
+   ^
+In file included from /home/hemanth/neural_fly/src/mavros/mavros/include/mavros/mavros_plugin.h:20:0,
+                 from /home/hemanth/neural_fly/src/mavros/mavros/src/plugins/sys_status.cpp:17:
+/usr/include/c++/7/tuple:608:19: note: candidate: template<class _Dummy, typename std::enable_if<((std::_TC<std::is_same<_Dummy, void>::value, unsigned int, const char*, long unsigned int, std::function<void(const mavlink::__mavlink_message*, mavconn::Framing)> >::_ConstructibleTuple<unsigned int, const char*, long unsigned int, function<void(const mavlink::__mavlink_message*, mavconn::Framing)> >() && std::_TC<std::is_same<_Dummy, void>::value, unsigned int, const char*, long unsigned int, std::function<void(const mavlink::__mavlink_message*, mavconn::Framing)> >::_ImplicitlyConvertibleTuple<unsigned int, const char*, long unsigned int, function<void(const mavlink::__mavlink_message*, mavconn::Framing)> >()) && (4 >= 1)), bool>::type <anonymous> > constexpr std::tuple<_Elements>::tuple(const _Elements& ...)
+         constexpr tuple(const _Elements&... __elements)
+                   ^~~~~
+/usr/include/c++/7/tuple:608:19: note:   template argument deduction/substitution failed:
+In file included from /home/hemanth/neural_fly/src/mavros/mavros/src/plugins/sys_status.cpp:17:0:
+/home/hemanth/neural_fly/src/mavros/mavros/include/mavros/mavros_plugin.h:119:3: note:   cannot convert ‘id’ (type ‘<type error>’) to type ‘const unsigned int&’
+   };
+   ^
+In file included from /home/hemanth/neural_fly/src/mavros/mavros/include/mavros/mavros_plugin.h:20:0,
+                 from /home/hemanth/neural_fly/src/mavros/mavros/src/plugins/sys_status.cpp:17:
+/usr/include/c++/7/tuple:591:26: note: candidate: template<class _Dummy, typename std::enable_if<(std::tuple<unsigned int, const char*, long unsigned int, std::function<void(const mavlink::__mavlink_message*, mavconn::Framing)> >::_TC2<_Dummy>::_DefaultConstructibleTuple() && (! std::tuple<unsigned int, const char*, long unsigned int, std::function<void(const mavlink::__mavlink_message*, mavconn::Framing)> >::_TC2<_Dummy>::_ImplicitlyDefaultConstructibleTuple())), bool>::type <anonymous> > constexpr std::tuple<_Elements>::tuple()
+       explicit constexpr tuple()
+                          ^~~~~
+/usr/include/c++/7/tuple:591:26: note:   template argument deduction/substitution failed:
+In file included from /home/hemanth/neural_fly/src/mavros/mavros/src/plugins/sys_status.cpp:17:0:
+/home/hemanth/neural_fly/src/mavros/mavros/include/mavros/mavros_plugin.h:119:3: note:   candidate expects 0 arguments, 4 provided
+   };
+   ^
+In file included from /home/hemanth/neural_fly/src/mavros/mavros/include/mavros/mavros_plugin.h:20:0,
+                 from /home/hemanth/neural_fly/src/mavros/mavros/src/plugins/sys_status.cpp:17:
+/usr/include/c++/7/tuple:581:17: note: candidate: template<class _Dummy, typename std::enable_if<std::tuple<unsigned int, const char*, long unsigned int, std::function<void(const mavlink::__mavlink_message*, mavconn::Framing)> >::_TC2<_Dummy>::_ImplicitlyDefaultConstructibleTuple(), bool>::type <anonymous> > constexpr std::tuple<_Elements>::tuple()
+       constexpr tuple()
+                 ^~~~~
+/usr/include/c++/7/tuple:581:17: note:   template argument deduction/substitution failed:
+In file included from /home/hemanth/neural_fly/src/mavros/mavros/src/plugins/sys_status.cpp:17:0:
+/home/hemanth/neural_fly/src/mavros/mavros/include/mavros/mavros_plugin.h:119:3: note:   candidate expects 0 arguments, 4 provided
+   };
+   ^
+make[2]: *** [CMakeFiles/mavros_plugins.dir/src/plugins/sys_status.cpp.o] Error 1
+make[1]: *** [CMakeFiles/mavros_plugins.dir/all] Error 2
+make: *** [all] Error 2

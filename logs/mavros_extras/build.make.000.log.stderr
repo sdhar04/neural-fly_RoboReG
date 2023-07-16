@@ -1,0 +1,194 @@
+/home/hemanth/neural_fly/src/mavros/mavros_extras/src/plugins/companion_process_status.cpp:25:24: error: ‘mavlink::common::MAV_TYPE’ has not been declared
+ using mavlink::common::MAV_TYPE;
+                        ^~~~~~~~
+/home/hemanth/neural_fly/src/mavros/mavros_extras/src/plugins/companion_process_status.cpp:26:24: error: ‘mavlink::common::MAV_STATE’ has not been declared
+ using mavlink::common::MAV_STATE;
+                        ^~~~~~~~~
+/home/hemanth/neural_fly/src/mavros/mavros_extras/src/plugins/companion_process_status.cpp:27:24: error: ‘mavlink::common::MAV_COMPONENT’ has not been declared
+ using mavlink::common::MAV_COMPONENT;
+                        ^~~~~~~~~~~~~
+/home/hemanth/neural_fly/src/mavros/mavros_extras/src/plugins/companion_process_status.cpp: In member function ‘void mavros::extra_plugins::CompanionProcessStatusPlugin::status_cb(const ConstPtr&)’:
+/home/hemanth/neural_fly/src/mavros/mavros_extras/src/plugins/companion_process_status.cpp:66:25: error: ‘HEARTBEAT’ is not a member of ‘mavlink::common::msg’
+   mavlink::common::msg::HEARTBEAT heartbeat {};
+                         ^~~~~~~~~
+/home/hemanth/neural_fly/src/mavros/mavros_extras/src/plugins/companion_process_status.cpp:66:25: note: suggested alternative:
+In file included from /opt/ros/melodic/include/mavlink/v2.0/common/../standard/../minimal/minimal.hpp:312:0,
+                 from /opt/ros/melodic/include/mavlink/v2.0/common/../standard/standard.hpp:42,
+                 from /opt/ros/melodic/include/mavlink/v2.0/common/common.hpp:2674,
+                 from /home/hemanth/neural_fly/src/mavros/libmavconn/include/mavconn/mavlink_dialect.h:26,
+                 from /home/hemanth/neural_fly/src/mavros/libmavconn/include/mavconn/interface.h:37,
+                 from /home/hemanth/neural_fly/src/mavros/mavros/include/mavros/mavros_plugin.h:24,
+                 from /home/hemanth/neural_fly/src/mavros/mavros_extras/src/plugins/companion_process_status.cpp:17:
+/opt/ros/melodic/include/mavlink/v2.0/common/../standard/../minimal/./mavlink_msg_heartbeat.hpp:14:8: note:   ‘mavlink::minimal::msg::HEARTBEAT’
+ struct HEARTBEAT : mavlink::Message {
+        ^~~~~~~~~
+/home/hemanth/neural_fly/src/mavros/mavros_extras/src/plugins/companion_process_status.cpp:68:3: error: ‘heartbeat’ was not declared in this scope
+   heartbeat.type = enum_value(mavlink::common::MAV_TYPE::ONBOARD_CONTROLLER);
+   ^~~~~~~~~
+/home/hemanth/neural_fly/src/mavros/mavros_extras/src/plugins/companion_process_status.cpp:68:48: error: ‘mavlink::common::MAV_TYPE’ has not been declared
+   heartbeat.type = enum_value(mavlink::common::MAV_TYPE::ONBOARD_CONTROLLER);
+                                                ^~~~~~~~
+/home/hemanth/neural_fly/src/mavros/mavros_extras/src/plugins/companion_process_status.cpp:69:53: error: ‘mavlink::common::MAV_AUTOPILOT’ has not been declared
+   heartbeat.autopilot = enum_value(mavlink::common::MAV_AUTOPILOT::PX4);
+                                                     ^~~~~~~~~~~~~
+/home/hemanth/neural_fly/src/mavros/mavros_extras/src/plugins/companion_process_status.cpp:70:53: error: ‘mavlink::common::MAV_MODE_FLAG’ has not been declared
+   heartbeat.base_mode = enum_value(mavlink::common::MAV_MODE_FLAG::CUSTOM_MODE_ENABLED);
+                                                     ^~~~~~~~~~~~~
+In file included from /opt/ros/melodic/include/ros/assert.h:35:0,
+                 from /opt/ros/melodic/include/ros/common.h:36,
+                 from /opt/ros/melodic/include/ros/publisher.h:32,
+                 from /opt/ros/melodic/include/ros/node_handle.h:32,
+                 from /opt/ros/melodic/include/diagnostic_updater/diagnostic_updater.h:42,
+                 from /home/hemanth/neural_fly/src/mavros/mavros/include/mavros/mavros_plugin.h:23,
+                 from /home/hemanth/neural_fly/src/mavros/mavros_extras/src/plugins/companion_process_status.cpp:17:
+/home/hemanth/neural_fly/src/mavros/mavros_extras/src/plugins/companion_process_status.cpp:74:29: error: ‘MAV_COMPONENT’ was not declared in this scope
+       utils::to_string_enum<MAV_COMPONENT>(req->component) << " companion process status: " <<
+                             ^
+/opt/ros/melodic/include/ros/console.h:358:64: note: in definition of macro ‘ROSCONSOLE_PRINT_STREAM_AT_LOCATION_WITH_FILTER’
+     __rosconsole_print_stream_at_location_with_filter__ss__ << args; \
+                                                                ^~~~
+/opt/ros/melodic/include/ros/console.h:406:7: note: in expansion of macro ‘ROSCONSOLE_PRINT_STREAM_AT_LOCATION’
+       ROSCONSOLE_PRINT_STREAM_AT_LOCATION(args); \
+       ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/opt/ros/melodic/include/ros/console.h:579:43: note: in expansion of macro ‘ROS_LOG_STREAM_COND’
+ #define ROS_LOG_STREAM(level, name, args) ROS_LOG_STREAM_COND(true, level, name, args)
+                                           ^~~~~~~~~~~~~~~~~~~
+/opt/ros/melodic/include/rosconsole/macros_generated.h:61:44: note: in expansion of macro ‘ROS_LOG_STREAM’
+ #define ROS_DEBUG_STREAM_NAMED(name, args) ROS_LOG_STREAM(::ros::console::levels::Debug, std::string(ROSCONSOLE_NAME_PREFIX) + "." + name, args)
+                                            ^~~~~~~~~~~~~~
+/home/hemanth/neural_fly/src/mavros/mavros_extras/src/plugins/companion_process_status.cpp:73:3: note: in expansion of macro ‘ROS_DEBUG_STREAM_NAMED’
+   ROS_DEBUG_STREAM_NAMED("companion_process_status", "companion process component id: " <<
+   ^
+/home/hemanth/neural_fly/src/mavros/mavros_extras/src/plugins/companion_process_status.cpp:74:29: note: suggested alternative:
+       utils::to_string_enum<MAV_COMPONENT>(req->component) << " companion process status: " <<
+                             ^
+/opt/ros/melodic/include/ros/console.h:358:64: note: in definition of macro ‘ROSCONSOLE_PRINT_STREAM_AT_LOCATION_WITH_FILTER’
+     __rosconsole_print_stream_at_location_with_filter__ss__ << args; \
+                                                                ^~~~
+/opt/ros/melodic/include/ros/console.h:406:7: note: in expansion of macro ‘ROSCONSOLE_PRINT_STREAM_AT_LOCATION’
+       ROSCONSOLE_PRINT_STREAM_AT_LOCATION(args); \
+       ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/opt/ros/melodic/include/ros/console.h:579:43: note: in expansion of macro ‘ROS_LOG_STREAM_COND’
+ #define ROS_LOG_STREAM(level, name, args) ROS_LOG_STREAM_COND(true, level, name, args)
+                                           ^~~~~~~~~~~~~~~~~~~
+/opt/ros/melodic/include/rosconsole/macros_generated.h:61:44: note: in expansion of macro ‘ROS_LOG_STREAM’
+ #define ROS_DEBUG_STREAM_NAMED(name, args) ROS_LOG_STREAM(::ros::console::levels::Debug, std::string(ROSCONSOLE_NAME_PREFIX) + "." + name, args)
+                                            ^~~~~~~~~~~~~~
+/home/hemanth/neural_fly/src/mavros/mavros_extras/src/plugins/companion_process_status.cpp:73:3: note: in expansion of macro ‘ROS_DEBUG_STREAM_NAMED’
+   ROS_DEBUG_STREAM_NAMED("companion_process_status", "companion process component id: " <<
+   ^
+In file included from /opt/ros/melodic/include/mavlink/v2.0/common/../standard/standard.hpp:42:0,
+                 from /opt/ros/melodic/include/mavlink/v2.0/common/common.hpp:2674,
+                 from /home/hemanth/neural_fly/src/mavros/libmavconn/include/mavconn/mavlink_dialect.h:26,
+                 from /home/hemanth/neural_fly/src/mavros/libmavconn/include/mavconn/interface.h:37,
+                 from /home/hemanth/neural_fly/src/mavros/mavros/include/mavros/mavros_plugin.h:24,
+                 from /home/hemanth/neural_fly/src/mavros/mavros_extras/src/plugins/companion_process_status.cpp:17:
+/opt/ros/melodic/include/mavlink/v2.0/common/../standard/../minimal/minimal.hpp:165:12: note:   ‘mavlink::minimal::MAV_COMPONENT’
+ enum class MAV_COMPONENT
+            ^~~~~~~~~~~~~
+In file included from /opt/ros/melodic/include/ros/assert.h:35:0,
+                 from /opt/ros/melodic/include/ros/common.h:36,
+                 from /opt/ros/melodic/include/ros/publisher.h:32,
+                 from /opt/ros/melodic/include/ros/node_handle.h:32,
+                 from /opt/ros/melodic/include/diagnostic_updater/diagnostic_updater.h:42,
+                 from /home/hemanth/neural_fly/src/mavros/mavros/include/mavros/mavros_plugin.h:23,
+                 from /home/hemanth/neural_fly/src/mavros/mavros_extras/src/plugins/companion_process_status.cpp:17:
+/home/hemanth/neural_fly/src/mavros/mavros_extras/src/plugins/companion_process_status.cpp:74:58: error: no matching function for call to ‘to_string_enum<<expression error> >(const _component_type&)’
+       utils::to_string_enum<MAV_COMPONENT>(req->component) << " companion process status: " <<
+                                                          ^
+/opt/ros/melodic/include/ros/console.h:358:64: note: in definition of macro ‘ROSCONSOLE_PRINT_STREAM_AT_LOCATION_WITH_FILTER’
+     __rosconsole_print_stream_at_location_with_filter__ss__ << args; \
+                                                                ^~~~
+/opt/ros/melodic/include/ros/console.h:406:7: note: in expansion of macro ‘ROSCONSOLE_PRINT_STREAM_AT_LOCATION’
+       ROSCONSOLE_PRINT_STREAM_AT_LOCATION(args); \
+       ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/opt/ros/melodic/include/ros/console.h:579:43: note: in expansion of macro ‘ROS_LOG_STREAM_COND’
+ #define ROS_LOG_STREAM(level, name, args) ROS_LOG_STREAM_COND(true, level, name, args)
+                                           ^~~~~~~~~~~~~~~~~~~
+/opt/ros/melodic/include/rosconsole/macros_generated.h:61:44: note: in expansion of macro ‘ROS_LOG_STREAM’
+ #define ROS_DEBUG_STREAM_NAMED(name, args) ROS_LOG_STREAM(::ros::console::levels::Debug, std::string(ROSCONSOLE_NAME_PREFIX) + "." + name, args)
+                                            ^~~~~~~~~~~~~~
+/home/hemanth/neural_fly/src/mavros/mavros_extras/src/plugins/companion_process_status.cpp:73:3: note: in expansion of macro ‘ROS_DEBUG_STREAM_NAMED’
+   ROS_DEBUG_STREAM_NAMED("companion_process_status", "companion process component id: " <<
+   ^
+In file included from /home/hemanth/neural_fly/src/mavros/mavros/include/mavros/mavros_uas.h:29:0,
+                 from /home/hemanth/neural_fly/src/mavros/mavros/include/mavros/mavros_plugin.h:25,
+                 from /home/hemanth/neural_fly/src/mavros/mavros_extras/src/plugins/companion_process_status.cpp:17:
+/home/hemanth/neural_fly/src/mavros/mavros/include/mavros/utils.h:85:13: note: candidate: template<class _T> std::__cxx11::string mavros::utils::to_string_enum(int)
+ std::string to_string_enum(int e)
+             ^~~~~~~~~~~~~~
+/home/hemanth/neural_fly/src/mavros/mavros/include/mavros/utils.h:85:13: note:   template argument deduction/substitution failed:
+In file included from /opt/ros/melodic/include/ros/assert.h:35:0,
+                 from /opt/ros/melodic/include/ros/common.h:36,
+                 from /opt/ros/melodic/include/ros/publisher.h:32,
+                 from /opt/ros/melodic/include/ros/node_handle.h:32,
+                 from /opt/ros/melodic/include/diagnostic_updater/diagnostic_updater.h:42,
+                 from /home/hemanth/neural_fly/src/mavros/mavros/include/mavros/mavros_plugin.h:23,
+                 from /home/hemanth/neural_fly/src/mavros/mavros_extras/src/plugins/companion_process_status.cpp:17:
+/home/hemanth/neural_fly/src/mavros/mavros_extras/src/plugins/companion_process_status.cpp:74:58: error: template argument 1 is invalid
+       utils::to_string_enum<MAV_COMPONENT>(req->component) << " companion process status: " <<
+                                                          ^
+/opt/ros/melodic/include/ros/console.h:358:64: note: in definition of macro ‘ROSCONSOLE_PRINT_STREAM_AT_LOCATION_WITH_FILTER’
+     __rosconsole_print_stream_at_location_with_filter__ss__ << args; \
+                                                                ^~~~
+/opt/ros/melodic/include/ros/console.h:406:7: note: in expansion of macro ‘ROSCONSOLE_PRINT_STREAM_AT_LOCATION’
+       ROSCONSOLE_PRINT_STREAM_AT_LOCATION(args); \
+       ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/opt/ros/melodic/include/ros/console.h:579:43: note: in expansion of macro ‘ROS_LOG_STREAM_COND’
+ #define ROS_LOG_STREAM(level, name, args) ROS_LOG_STREAM_COND(true, level, name, args)
+                                           ^~~~~~~~~~~~~~~~~~~
+/opt/ros/melodic/include/rosconsole/macros_generated.h:61:44: note: in expansion of macro ‘ROS_LOG_STREAM’
+ #define ROS_DEBUG_STREAM_NAMED(name, args) ROS_LOG_STREAM(::ros::console::levels::Debug, std::string(ROSCONSOLE_NAME_PREFIX) + "." + name, args)
+                                            ^~~~~~~~~~~~~~
+/home/hemanth/neural_fly/src/mavros/mavros_extras/src/plugins/companion_process_status.cpp:73:3: note: in expansion of macro ‘ROS_DEBUG_STREAM_NAMED’
+   ROS_DEBUG_STREAM_NAMED("companion_process_status", "companion process component id: " <<
+   ^
+/home/hemanth/neural_fly/src/mavros/mavros_extras/src/plugins/companion_process_status.cpp:75:29: error: ‘MAV_STATE’ was not declared in this scope
+       utils::to_string_enum<MAV_STATE>(heartbeat.system_status) << std::endl << heartbeat.to_yaml());
+                             ^
+/opt/ros/melodic/include/ros/console.h:358:64: note: in definition of macro ‘ROSCONSOLE_PRINT_STREAM_AT_LOCATION_WITH_FILTER’
+     __rosconsole_print_stream_at_location_with_filter__ss__ << args; \
+                                                                ^~~~
+/opt/ros/melodic/include/ros/console.h:406:7: note: in expansion of macro ‘ROSCONSOLE_PRINT_STREAM_AT_LOCATION’
+       ROSCONSOLE_PRINT_STREAM_AT_LOCATION(args); \
+       ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/opt/ros/melodic/include/ros/console.h:579:43: note: in expansion of macro ‘ROS_LOG_STREAM_COND’
+ #define ROS_LOG_STREAM(level, name, args) ROS_LOG_STREAM_COND(true, level, name, args)
+                                           ^~~~~~~~~~~~~~~~~~~
+/opt/ros/melodic/include/rosconsole/macros_generated.h:61:44: note: in expansion of macro ‘ROS_LOG_STREAM’
+ #define ROS_DEBUG_STREAM_NAMED(name, args) ROS_LOG_STREAM(::ros::console::levels::Debug, std::string(ROSCONSOLE_NAME_PREFIX) + "." + name, args)
+                                            ^~~~~~~~~~~~~~
+/home/hemanth/neural_fly/src/mavros/mavros_extras/src/plugins/companion_process_status.cpp:73:3: note: in expansion of macro ‘ROS_DEBUG_STREAM_NAMED’
+   ROS_DEBUG_STREAM_NAMED("companion_process_status", "companion process component id: " <<
+   ^
+/home/hemanth/neural_fly/src/mavros/mavros_extras/src/plugins/companion_process_status.cpp:75:29: note: suggested alternative:
+       utils::to_string_enum<MAV_STATE>(heartbeat.system_status) << std::endl << heartbeat.to_yaml());
+                             ^
+/opt/ros/melodic/include/ros/console.h:358:64: note: in definition of macro ‘ROSCONSOLE_PRINT_STREAM_AT_LOCATION_WITH_FILTER’
+     __rosconsole_print_stream_at_location_with_filter__ss__ << args; \
+                                                                ^~~~
+/opt/ros/melodic/include/ros/console.h:406:7: note: in expansion of macro ‘ROSCONSOLE_PRINT_STREAM_AT_LOCATION’
+       ROSCONSOLE_PRINT_STREAM_AT_LOCATION(args); \
+       ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/opt/ros/melodic/include/ros/console.h:579:43: note: in expansion of macro ‘ROS_LOG_STREAM_COND’
+ #define ROS_LOG_STREAM(level, name, args) ROS_LOG_STREAM_COND(true, level, name, args)
+                                           ^~~~~~~~~~~~~~~~~~~
+/opt/ros/melodic/include/rosconsole/macros_generated.h:61:44: note: in expansion of macro ‘ROS_LOG_STREAM’
+ #define ROS_DEBUG_STREAM_NAMED(name, args) ROS_LOG_STREAM(::ros::console::levels::Debug, std::string(ROSCONSOLE_NAME_PREFIX) + "." + name, args)
+                                            ^~~~~~~~~~~~~~
+/home/hemanth/neural_fly/src/mavros/mavros_extras/src/plugins/companion_process_status.cpp:73:3: note: in expansion of macro ‘ROS_DEBUG_STREAM_NAMED’
+   ROS_DEBUG_STREAM_NAMED("companion_process_status", "companion process component id: " <<
+   ^
+In file included from /opt/ros/melodic/include/mavlink/v2.0/common/../standard/standard.hpp:42:0,
+                 from /opt/ros/melodic/include/mavlink/v2.0/common/common.hpp:2674,
+                 from /home/hemanth/neural_fly/src/mavros/libmavconn/include/mavconn/mavlink_dialect.h:26,
+                 from /home/hemanth/neural_fly/src/mavros/libmavconn/include/mavconn/interface.h:37,
+                 from /home/hemanth/neural_fly/src/mavros/mavros/include/mavros/mavros_plugin.h:24,
+                 from /home/hemanth/neural_fly/src/mavros/mavros_extras/src/plugins/companion_process_status.cpp:17:
+/opt/ros/melodic/include/mavlink/v2.0/common/../standard/../minimal/minimal.hpp:146:12: note:   ‘mavlink::minimal::MAV_STATE’
+ enum class MAV_STATE : uint8_t
+            ^~~~~~~~~
+make[2]: *** [CMakeFiles/mavros_extras.dir/src/plugins/companion_process_status.cpp.o] Error 1
+make[2]: *** Waiting for unfinished jobs....
+make[1]: *** [CMakeFiles/mavros_extras.dir/all] Error 2
+make: *** [all] Error 2

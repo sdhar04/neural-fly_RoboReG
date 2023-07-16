@@ -1,0 +1,14 @@
+/home/hemanth/neural_fly/src/mavros/mavros_extras/src/plugins/companion_process_status.cpp: In member function ‘void mavros::extra_plugins::CompanionProcessStatusPlugin::status_cb(const ConstPtr&)’:
+/home/hemanth/neural_fly/src/mavros/mavros_extras/src/plugins/companion_process_status.cpp:68:48: error: ‘mavlink::common::MAV_TYPE’ has not been declared
+   heartbeat.type = enum_value(mavlink::common::MAV_TYPE::ONBOARD_CONTROLLER);
+                                                ^~~~~~~~
+/home/hemanth/neural_fly/src/mavros/mavros_extras/src/plugins/companion_process_status.cpp:69:53: error: ‘mavlink::common::MAV_AUTOPILOT’ has not been declared
+   heartbeat.autopilot = enum_value(mavlink::common::MAV_AUTOPILOT::PX4);
+                                                     ^~~~~~~~~~~~~
+/home/hemanth/neural_fly/src/mavros/mavros_extras/src/plugins/companion_process_status.cpp:70:53: error: ‘mavlink::common::MAV_MODE_FLAG’ has not been declared
+   heartbeat.base_mode = enum_value(mavlink::common::MAV_MODE_FLAG::CUSTOM_MODE_ENABLED);
+                                                     ^~~~~~~~~~~~~
+make[2]: *** [CMakeFiles/mavros_extras.dir/src/plugins/companion_process_status.cpp.o] Error 1
+make[2]: *** Waiting for unfinished jobs....
+make[1]: *** [CMakeFiles/mavros_extras.dir/all] Error 2
+make: *** [all] Error 2

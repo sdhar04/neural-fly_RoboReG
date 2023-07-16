@@ -1,0 +1,1 @@
+/home/hemanth/neural_fly/devel/.private/msf_core/lib/python2.7/dist-packages/msf_core/cfg/__init__.py

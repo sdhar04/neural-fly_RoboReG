@@ -1,0 +1,2 @@
+- setup-file:
+    local-name: /home/hemanth/neural_fly/devel/.private/mavros/setup.sh

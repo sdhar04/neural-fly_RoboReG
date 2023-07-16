@@ -1,0 +1,10 @@
+mavros/mavros
+/home/hemanth/neural_fly/devel/.private/mavros/cmake.lock /home/hemanth/neural_fly/devel/./cmake.lock
+/home/hemanth/neural_fly/devel/.private/mavros/share/mavros/cmake/mavrosConfig-version.cmake /home/hemanth/neural_fly/devel/share/mavros/cmake/mavrosConfig-version.cmake
+/home/hemanth/neural_fly/devel/.private/mavros/share/mavros/cmake/mavrosConfig.cmake /home/hemanth/neural_fly/devel/share/mavros/cmake/mavrosConfig.cmake
+/home/hemanth/neural_fly/devel/.private/mavros/lib/libmavros.so /home/hemanth/neural_fly/devel/lib/libmavros.so
+/home/hemanth/neural_fly/devel/.private/mavros/lib/libmavros_plugins.so /home/hemanth/neural_fly/devel/lib/libmavros_plugins.so
+/home/hemanth/neural_fly/devel/.private/mavros/lib/mavros/mavros_node /home/hemanth/neural_fly/devel/lib/mavros/mavros_node
+/home/hemanth/neural_fly/devel/.private/mavros/lib/mavros/gcs_bridge /home/hemanth/neural_fly/devel/lib/mavros/gcs_bridge
+/home/hemanth/neural_fly/devel/.private/mavros/lib/python2.7/dist-packages/mavros/__init__.py /home/hemanth/neural_fly/devel/lib/python2.7/dist-packages/mavros/__init__.py
+/home/hemanth/neural_fly/devel/.private/mavros/lib/pkgconfig/mavros.pc /home/hemanth/neural_fly/devel/lib/pkgconfig/mavros.pc

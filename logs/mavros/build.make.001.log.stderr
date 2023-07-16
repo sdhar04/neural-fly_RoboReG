@@ -1,0 +1,11 @@
+/home/hemanth/neural_fly/src/mavros/mavros/src/plugins/command.cpp: In member function ‘void mavros::std_plugins::CommandPlugin::set_target(MsgT&, bool)’:
+/home/hemanth/neural_fly/src/mavros/mavros/src/plugins/command.cpp:236:26: error: ‘mavlink::common::MAV_COMPONENT’ has not been declared
+   using mavlink::common::MAV_COMPONENT;
+                          ^~~~~~~~~~~~~
+/home/hemanth/neural_fly/src/mavros/mavros/src/plugins/command.cpp:241:15: error: ‘MAV_COMPONENT’ has not been declared
+    enum_value(MAV_COMPONENT::COMP_ID_SYSTEM_CONTROL) : m_uas->get_tgt_component();
+               ^~~~~~~~~~~~~
+make[2]: *** [CMakeFiles/mavros_plugins.dir/src/plugins/command.cpp.o] Error 1
+make[2]: *** Waiting for unfinished jobs....
+make[1]: *** [CMakeFiles/mavros_plugins.dir/all] Error 2
+make: *** [all] Error 2

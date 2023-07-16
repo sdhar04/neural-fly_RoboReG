@@ -1,0 +1,2 @@
+- setup-file:
+    local-name: /home/hemanth/neural_fly/devel/.private/mav_linear_mpc/setup.sh
