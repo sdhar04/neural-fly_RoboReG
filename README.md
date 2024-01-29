@@ -35,7 +35,7 @@ For specific details please refer to the article.
 
 ## Experiment data
 
-Additionally, the data from the experiment results present in the paper is provided. To load the data, run the following in python
+Additionally, the data from the experiment results present in the paper is provided. To load the data, run the following in Python
 
     import utils
     Data = utils.load_data(folder='data/experiment')
