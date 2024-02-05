@@ -35,7 +35,7 @@ For specific details please refer to the article.
 
 ## Experiment data
 
-Additionally, the data from the experiment results present in the paper is provided. To load the data, run the following in Python
+Additionally, the data from the experiment results present in the paper is provided. To load the data, run the following in Python:
 
     import utils
     Data = utils.load_data(folder='data/experiment')
@@ -74,7 +74,7 @@ Check out our overview video:
 
 ## Citation
 
-The data and code here are for personal and educational use only and provided without warranty; written permission from the authors is required for further use. Please cite our work as follows.
+The data and code here are for personal and educational use only and provided without warranty; written permission from the authors is required for further use. Please cite our work as follows:
 
 > @article{
 doi:10.1126/scirobotics.abm6597,
